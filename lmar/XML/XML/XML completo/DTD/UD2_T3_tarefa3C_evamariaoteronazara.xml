@@ -1,0 +1,335 @@
+<!-- TAREFA 3C
+<?xml version="1.1"?>
+  -->
+  
+  <!-- 
+	PROPIETARIO: podria estar aparte de las viviendas, de manera que no se repitiesen los datos si tiene varias viviendas.
+	para referenciar, se añade en cada vivienda un ID 
+	<propietario id="PROPIET1"></propietario>
+  --> 
+  
+ <inmobiliaria nome="inmobiliaria"> 
+ 
+
+		<vivenda> 
+			<propietario> 
+				<nome> Nome1 </nome>
+				<apelidos> Apelidos1 </apelidos>
+				<telefono> 666555444 </telefono>
+			</propietario>
+			
+			<situacion> 
+				<rúa> Chan do Monte </rúa>
+				<número> 20 </número>
+				<localidade> Marín </localidade> 
+				<CP> 55965 </CP>
+			</situacion>
+			
+			
+			<rexime >
+				<tipo> Aluguer </tipo>
+				<prezo> 650€ </prezo>
+			</rexime>
+			
+			
+			
+			<caracteristicas>
+				<anoConstruccion> 1990 </anoConstruccion>
+				<superficie> 150 m2 </superficie>
+
+			
+				<garaxe> Si </garaxe>
+				<trasteiro m2="5"> Si 
+				
+				</trasteiro>
+				<amoblado> Non  </amoblado>
+				<!-- <ascensor> Non </ascensor> --> 
+				<ascensor> </ascensor>
+				<comentarios> Balcón en dormitorio principal 	</comentarios>
+				
+				<!-- mejor dentro de las características --> 
+				<distribucion> 
+					<oco> 
+						<nome> Cociña </nome>
+						<tamaño> 5 metros </tamaño>
+					</oco>
+					<oco> 
+						<nome> Baño  </nome>
+						<tamaño> 2 metros  </tamaño>
+					</oco>
+					<oco tipo="dormitorio" m2="3"> </oco >
+					<oco> 
+						<nome> Dormitorio invitados </nome>
+						<tamaño> 3 metros </tamaño>
+					</oco>
+					<oco> 
+						<nome> Aseo </nome>
+						<tamaño> 1 metro </tamaño>
+					</oco>
+					<oco> 
+						<nome> Salon </nome>
+						<tamaño> 9 metros </tamaño>
+					</oco>
+					<oco tipo="garaxe" m2="2"> 
+						<observaciones> Sólo se pueden poner observaciones si esta así </observaciones>
+					</oco >
+
+				</distribucion>
+				
+			</caracteristicas>
+			
+			<fotos> 
+				<imagen url="..."/>
+			</fotos>
+			
+				<planta> 
+					<num> 5 </num>
+					<atico> sí </atico>
+				
+				</planta>
+		</vivenda>
+		
+		<vivenda> 
+			<propietario> 
+					<nome> Nome </nome>
+					<apelidos> Apelidos </apelidos>
+					<telefono> 666555444 </telefono>
+				</propietario>
+				
+				<situacion> 
+					<rúa> Sagasta </rúa>
+					<número> 4C </número>
+					<localidade> Pontevedra </localidade> 
+					<CP> 45669 </CP>
+				</situacion>
+				
+				<anoConstruccion> 2010 </anoConstruccion>
+				
+				
+				<rexime >
+					<tipo> Venta ou aluguer </tipo>
+					<prezo> 400.000€ venta, 460€ aluguer </prezo>
+				</rexime>
+				
+				<superficie> 80 </superficie>
+				
+				<distribucion> 
+					<oco> 
+						<nome> Cociña</nome>
+						<tamaño> 5m </tamaño>
+					</oco>
+					<oco> 
+						<nome> Baño  </nome>
+						<tamaño> 2m </tamaño>
+					</oco>
+					<oco> 
+						<nome> Dormitorio principal </nome>
+						<tamaño> 4m </tamaño>
+					</oco>
+					<oco> 
+						<nome> Salon </nome>
+						<tamaño> 6m </tamaño>
+					</oco>
+				</distribucion>
+				
+				<caracteristicasEspaciais>
+					<garaxe> Non </garaxe>
+					<trasteiro> Non </trasteiro>
+					<amoblado> Si  </amoblado>
+					<ascensor> Non </ascensor>
+					<comentarios> </comentarios>
+				</caracteristicasEspaciais>
+				
+				<fotos> 
+				</fotos>
+		</vivenda>
+		
+		<vivenda> 
+			<propietario> 
+				<nome> Nome </nome>
+				<apelidos> Apelidos </apelidos>
+				<telefono> 777888999 </telefono>
+			</propietario>
+			
+			<situacion> 
+				<rúa> Monte da vila </rúa>
+				<número> 4 </número>
+				<localidade> Marín </localidade> 
+				<CP> 55965 </CP>
+			</situacion>
+			
+			<anoConstruccion> 1990 </anoConstruccion>
+			
+			
+			<rexime >
+				<tipo> Venta / aluguer / ambos </tipo>
+				<prezo> 650€ </prezo>
+			</rexime>
+			
+			<superficie> </superficie>
+			
+			<distribucion> 
+				<oco> 
+					<nome> Cociña </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Baño  </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio principal </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio invitados </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Aseo </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Salon </nome>
+					<tamaño> </tamaño>
+				</oco>
+			</distribucion>
+			
+			<caracteristicasEspaciais>
+				<garaxe> Si </garaxe>
+				<trasteiro> Si </trasteiro>
+				<amoblado> Non  </amoblado>
+				<ascensor> Non </ascensor>
+				<comentarios> Balcón en dormitorio principal 	</comentarios>
+			</caracteristicasEspaciais>
+			
+			<fotos> 
+			</fotos>
+		</vivenda>
+		
+		<vivenda> 
+			<propietario> 
+				<nome> Nome </nome>
+				<apelidos> Apelidos </apelidos>
+				<telefono> 666555444 </telefono>
+			</propietario>
+			
+			<situacion> 
+				<rúa> Chan do Monte </rúa>
+				<número> 20 </número>
+				<localidade> Marín </localidade> 
+				<CP> 55965 </CP>
+			</situacion>
+			
+			<anoConstruccion> 1990 </anoConstruccion>
+			
+			
+			<rexime >
+				<tipo> Venta / aluguer / ambos </tipo>
+				<prezo> 650€ </prezo>
+			</rexime>
+			
+			<superficie> </superficie>
+			<distribucion> 
+				<oco> 
+					<nome> Cociña </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Baño  </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio principal </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio invitados </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Aseo </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Salon </nome>
+					<tamaño> </tamaño>
+				</oco>
+			</distribucion>
+			
+			<caracteristicasEspaciais>
+				<garaxe> Si </garaxe>
+				<trasteiro> Si </trasteiro>
+				<amoblado> Non  </amoblado>
+				<ascensor> Non </ascensor>
+				<comentarios> Balcón en dormitorio principal 	</comentarios>
+			</caracteristicasEspaciais>
+			
+			<fotos> 
+			</fotos>
+		</vivenda>
+		
+		<vivenda> 
+			<propietario> 
+				<nome> Nome </nome>
+				<apelidos> Apelidos </apelidos>
+				<telefono> 666555444 </telefono>
+			</propietario>
+			
+			<situacion> 
+				<rúa> Chan do Monte </rúa>
+				<número> 20 </número>
+				<localidade> Marín </localidade> 
+				<CP> 55965 </CP>
+			</situacion>
+			
+			<anoConstruccion> 1990 </anoConstruccion>
+			
+			
+			<rexime >
+				<tipo> Venta / aluguer / ambos </tipo>
+				<prezo> 650€ </prezo>
+			</rexime>
+			
+			<superficie> </superficie> 
+			
+			<distribucion> 
+				<oco> 
+					<nome> Cociña </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Baño  </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio principal </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Dormitorio invitados </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Aseo </nome>
+					<tamaño> </tamaño>
+				</oco>
+				<oco> 
+					<nome> Salon </nome>
+					<tamaño> </tamaño>
+				</oco>
+			</distribucion>
+			
+			<caracteristicasEspaciais>
+				<garaxe> Si </garaxe>
+				<trasteiro> Si </trasteiro>
+				<amoblado> Non  </amoblado>
+				<ascensor> Non </ascensor>
+				<comentarios> Balcón en dormitorio principal 	</comentarios>
+			</caracteristicasEspaciais>
+			
+			<fotos> 
+			</fotos>
+		</vivenda>
+
+ </inmobiliaria>

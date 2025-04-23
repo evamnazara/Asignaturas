@@ -1,0 +1,70 @@
+ENUNCIADO:
+
+Se quiere guardar información de las exposiciones de fotografía que se exhiben en diferentes centros de exposición a nivel nacional. Se consideran los siguientes supuestos:
+
+exposiciones 
+     nombre unico
+     descripción. No puede haber dos exposiciones con el mismo nombre.
+     temática (naturaleza, gentes, fiestas, tradiciones, espacios, edificios y deportes)
+     valor por defecto cuando se almacene sea la temática de fiestas.
+
+TABLA SALAS
+Las exposiciones se muestran en salas acondicionadas que tienen diversos centros para su exhibición. 
+Las salas, a lo largo del tiempo, pueden cambiar de exposición y las exposiciones pueden estar en salas de diferentes centros culturales e incluso volver a exhibirse en la misma sala. El tiempo mínimo que una exposición está en una sala es de 20 días. Por defecto la fecha de comienzo de la exposición es la fecha del sistema.
+
+CENTROS 
+     código (1 letra en mayúsculas, un guion y 3 dígitos)
+     primary key 
+     CONSTRAINT CK_CODCENTRO CHECK (codCentro) LIKE [A-Z][-][0-9][0-9][0-9]
+     nombre único,
+     fecha de inauguración (por defecto, la fecha de hace dos años), 
+     
+     metros cuadrados, 
+     teléfono (formado por 9 dígitos), 
+     página web (puede ser desconocida) 
+     dirección
+     localidad. 
+          localidad 
+               id autoincremental  empieza 1
+               nombre (único)
+               la página web si tiene, 
+               número de habitantes 
+               provincia a la que pertenece. 
+               No se van a permitir introducir localidades de menos de 1000 habitantes y por defecto es 5000. 
+          
+          provincia 
+               id autoincremental 1
+              nombre único
+
+
+Cada centro de exposición está dividido en una o varias salas. Cada centro enumera consecutivamente a sus salas. De casa sala se desea saber los metros cuadrados que tiene y no se van a permitir salas más pequeñas de 20 m2 ni mayores de 1000 m2 y por defecto será 100 m2.
+
+Cada exposición está formada de forma exclusiva por varias fotografías. No se guardan fotografías que no pertenezcan a ninguna exposición. De cada fotografía se guarda un nombre, fecha de realización, medidas y si es color (se guardará S o N). Las fotografías pueden ser artísticas o documentales. De las artísticas se guarda el encuadre (solo puede ser horizontal, vertical, inclinado y por defecto se almacena vertical) y la composición. De las documentales se guarda el tipo de fotografía documental (social, actualidad, etc..).
+
+Las fotografías son realizadas por un fotógrafo. Los fotógrafos se identifican por un código numérico autoincremental, se guarda nombre, apellido1 y apellido2 (puede ser desconocido), fecha de nacimiento, nacionalidad y premios obtenidos (es opcional). Los fotográfos tienen que ser mayor de edad.
+
+Hay fotógrafos que son influencer de otros fotógrafos. Un fotógrafo, si tiene un influencer, solo es de uno y un influencer puede serlo de varios.
+__________
+
+La información de las tablas que tengan que ver con los fotógrafos y las fotografía se almacenarán en el grupo Primary y el resto de las tablas se almacenarán en el grupo Datos_fotografía.
+
+Los Tipos de datos de los atributos:
+
+Deberás crear un tipo de datos llamado Fecha (datetime) y que acepte valores nulos. Los campos de tipo fecha serán de este tipo.
+
+Los codígos numéricos son smallint, 
+El número de caracteres máximo para los nombres de localidades, Provincia y centro de exposición son 40, 
+
+los atributos dirección, página web y descripción de 70, 
+metros son float, 
+
+los atributos temática, tipo, encuadre y nacionalidad de 25, 
+el atributo composición de 50 y los atributos nombre, apellido1 y apellido 2 de 30.
+
+Integridad Referencial:
+
+-Si se borra o actualiza un fotógrafo, la misma acción se debe hacer con sus premios, fotografías y tipo de estas.
+
+-No se permitirá borrar una provincia mientras exista una localidad al igual que si se borra la localidad si existe un centro de exposición en dicha localidad. Al modificar una provincia o localidad, esta acción se hace también en la tabla correspondiente.
+
+-Para el resto de las relaciones, no se permitirá ni borrar ni actualizar una tabla si existen datos en las tablas que referencian a estas.

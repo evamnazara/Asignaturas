@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<!-- TAREFA  6B_A -
+tiene un atributo estado (sólido, líquido, gaseoso).
+un elemento nombre (no se puede repetir).
+un elemento simbolo (tres caracteres como máximo, 1ª letra mayúscula).
+un elemento numero_atomico.
+un elemento punto_ebullicion con un atributo unidades, que puede ser centígrados o kelvin y por defecto tomará el valor centigrados.
+un elemento densidad con un atributo unidades.
+Por ejemplo:
+
+Hidrógeno estado=“gas”, símbolo “H”, número atómico “1”,peso atómico “1.00794”, punto ebullición unidades=“kelvin” “20.28”, densidad unidades=“gramos/centímetros cúbicos” “0.0899”
+
+Helio estado=“gas”, símbolo ”He”, número atómico “2”, peso atómico “4.0026, punto ebullición unidades=“kelvin” “4.216”, densidad unidades=“gramos/centímetros cúbicos” “0.1785”
+
+-->
+<tablaPeriodica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="tabla_periodica.xsd">
+  <atomo estado="gas">
+    <nombre>Hidrogeno</nombre>
+    <simbolo>H</simbolo>
+    <numeroAtomico>1</numeroAtomico>
+    <puntoEbullicion unidades="kelvin">
+      <valor>20.28</valor>
+    </puntoEbullicion>
+    <densidad unidades="gramos">
+      <valor>0.0899</valor>
+    </densidad>
+  </atomo>
+  
+  <atomo estado="gas">
+    <nombre>Helio</nombre>
+    <simbolo>He</simbolo>
+    <numeroAtomico>2</numeroAtomico>
+    <puntoEbullicion unidades="kelvin">
+      <valor>4.216</valor>
+    </puntoEbullicion>
+    <densidad unidades="gramos">
+      <valor>0.1785</valor>
+    </densidad>
+  </atomo>
+</tablaPeriodica>

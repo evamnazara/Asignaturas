@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE song [
+
+<!ELEMENT song (title. composers,producers,publisher,artists)>
+
+<!ATTLIST song
+          lenght CDATA #IMPLIED
+          anio CDATA #REQUIRED> 
+
+<!ELEMENT title >
+<!ELEMENT composers(composer+)>
+<!ELEMENT producers(producer+)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT artists (artist+)>
+
+]>
+
+
+<song>
+<title>Cancion</title>
+<composers>
+      <composer>
+            <nombre>Henry</nombre>
+            <apellidos>Beolo</apellidos>
+      </composer>
+</composers>
+
+<producers>
+    <producer>
+             <nombre>Jacques</nombre>
+            <apellidos>Morali</apellidos>
+    </producer>
+</producers>
+
+<publisher>
+          PoliGram
+</publisher>
+
+<artists>
+    <artist>  Village People </artist>
+</artists>
+</song>

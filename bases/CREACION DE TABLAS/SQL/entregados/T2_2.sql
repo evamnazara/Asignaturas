@@ -1,0 +1,23 @@
+CREATE DATABASE BDCreateDB3
+ON
+PRIMARY (
+NAME = BDCreateDB3_root,
+FILENAME = 'C:\BDCreateDB3\BDCreateDB3_root.mdf',
+SIZE = 8MB,
+FILEGROWTH = 100KB,
+MAXSIZE = 9MB
+),
+FILEGROUP Secundario (
+NAME = BDCreateDB3_data1,
+FILENAME = 'C:\BDCreateDB3\BDCreateDB3_data1.ndf',
+SIZE = 10MB,
+FILEGROWTH = 1MB,
+MAXSIZE = 15MB
+)
+LOG ON (
+NAME = BDCreateDB3_Log,
+FILENAME = 'C:\BDCreateDB3\BDCreateDB3_Log.ldf',
+SIZE = 10MB,
+FILEGROWTH = 1MB,
+MAXSIZE = 15MB
+);

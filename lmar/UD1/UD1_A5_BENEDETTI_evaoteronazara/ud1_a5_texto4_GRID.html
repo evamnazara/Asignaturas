@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EVA OTERO - Mario Benedetti</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #778899;
+      }
+
+      .contenedor {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        border: 2px solid black;
+        background-color: #ffffe0;
+        max-width: 950px;
+        padding: 20px;
+        margin: auto;
+      }
+
+      header {
+        background-color: #faebd7;
+        display: grid;
+        grid-template-columns: 50% 75px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      h1 {
+        padding-left: 30px;
+      }
+
+      #foto {
+        width: 55px;
+        height: 55px;
+        padding: 10px;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: 150px 150px 150px;
+        background-color: #323232;
+      }
+
+      nav a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: #d2d3d4;
+      }
+
+      h2 {
+        color: #a0a0a0;
+        text-shadow: 1px 1px 2px #ccc;
+      }
+
+      #libros {
+        display: grid;
+        grid-template-columns: 24% 24% 24% 24%;
+        justify-content: space-around;
+      }
+
+      #libros > .libro {
+        border: 1px solid #d9d9d9;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        background-color: #ffffff00;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 768px) {
+        nav a {
+          font-size: 90%;
+        }
+
+        #libros {
+          grid-template-columns: 2fr 2fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          flex-direction: column;
+        }
+
+        nav a {
+          display: block;
+          border-bottom: 1px solid #d2d3d4;
+          padding: 10px;
+        }
+
+        #libros {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+      }
+
+      #frases ol {
+        padding-left: 20px;
+      }
+
+      #leyenda {
+        color: #efefef;
+        font-style: italic;
+        font-size: 12px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      article p {
+        text-align: justify;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <header>
+        <h1>Mario Benedetti</h1>
+        <img id="foto" src="Benedetti.jpg" />
+      </header>
+      <nav>
+        <a href="#quien">Quién es</a>
+        <a href="#libros">Libros</a>
+        <a href="#frases">Frases</a>
+      </nav>
+      <article>
+        <section id="quien">
+          <p>
+            Mario Benedetti, excelente escritor, novelista y periodista que
+            centró su carrera en la literatura y se convirtió en el personaje
+            más importante para su país Uruguay, con una gran producción
+            literaria, en la segunda mitad del siglo XX. Desarrolló varias
+            facetas y se convirtió en un personaje de gran relevancia, que
+            realizó trabajos como novelista, dramaturgo, cuentista, crítico,
+            periodista y el más fundamental, un excelente escritor.
+          </p>
+        </section>
+        <h2>Libros</h2>
+        <hr />
+        <section id="libros">
+          <div class="libro" id="tregua">
+            <h3>La Tregua</h3>
+            <p>
+              Este libro refleja el espíritu romántico y filosófico del autor.
+              Está escrita como si fuera el diario del protagonista, Martín
+              Santomé, y retrata la vida de un empleado a punto jubilarse,
+              viudo, en el Montevideo de finales de los 50.
+            </p>
+          </div>
+          <div class="libro" id="vivir">
+            <h3>Vivir adrede</h3>
+            <p>
+              Todo es adrede, todo hace trizas el alma. ¿Nos traicionan nuestras
+              propias huellas? ¿Qué diferencia hay entre un suicida inevitable y
+              uno vocacional? A través de planteamientos como éstos, Vivir
+              adrede reflexiona sobre la vida.
+            </p>
+          </div>
+          <div class="libro" id="gracias">
+            <h3>Gracias por el fuego</h3>
+            <p>
+              Pieza fundamental de la narrativa de Mario Benedetti, GRACIAS POR
+              EL FUEGO novela una historia de frustraciones: la frustración de
+              un asesinato y una frustración personal que es a la vez reflejo de
+              la frustración general en que se mueve un país.
+            </p>
+          </div>
+          <div class="libro" id="amor">
+            <h3>El amor, las mujeres y la vida</h3>
+            <p>
+              Este libro reúne los mejores poemas de amor de Mario Benedetti.
+              Muchos de ellos están a flor de labio en la gente, que los
+              recuerda de memoria o los tiene en mente a la hora de garabatear
+              un verso; otros se han convertido en canciones y hasta en
+              graffitis.
+            </p>
+          </div>
+        </section>
+
+        <section id="frases">
+          <h2>Frases</h2>
+          <hr />
+          <div id="listaFrases">
+            <ol>
+              <li>
+                Cuando creíamos que teníamos todas las respuestas, de pronto,
+                cambiaron todas las preguntas.
+              </li>
+              <li>La mariposa recordará por siempre que fue gusano.</li>
+              <li>
+                Después de todo, la muerte es solo un síntoma de que hubo vida.
+              </li>
+              <li>Hay pocas cosas tan ensordecedoras como el silencio.</li>
+              <li>
+                La incertidumbre es una margarita cuyos pétalos no se terminan
+                jamás de deshojar.
+              </li>
+            </ol>
+          </div>
+        </section>
+      </article>
+    </div>
+    <a id="leyenda">©2024 - Trabajo de Eva María Otero Názara</a>
+  </body>
+</html>

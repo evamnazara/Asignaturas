@@ -1,0 +1,33 @@
+CDATA - general
+
+NMTOKEN -- solo con 
+NMTOKENS -- varios valores separados por espacio?
+
+
+para IDREF, no puede tener espacios el valor 
+<inventor nombre="Josephine Garis Cochran" invento="Lavaplatos" />
+
+
+_________________________
+
+entidades: o dadas o valorar su uso 
+
+las entidades de parametro no funcionan en dtd interno !! 
+
+
+<!ELEMENT libro ( titulo | autor | formato )* > unos U OTROS
+<!ELEMENT libro ( titulo , autor , formato )* > obligatorios todos
+
+__________
+
+ <!ELEMENT musico ((nombre | apodo), fechaNacimiento)>
+                ((UNO | OTRO), OTRO APARTE)
+
+__________________ 
+
+varios att de un elemento 
+
+<!ELEMENT idiomas EMPTY>
+    <!ATTLIST idiomas 
+            nombre CDATA "galego"
+            nivel ( bajo | medio | alto ) "medio">

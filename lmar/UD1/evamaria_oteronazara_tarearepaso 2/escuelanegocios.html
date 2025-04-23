@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Escuela de negocios - EVA</title>
+    <style>
+      body {
+        max-width: 850px;
+        margin: 0 auto;
+        background-color: #f0f0f0;
+        font-family: Arial;
+      }
+      h1 {
+        font-size: 1em;
+        font-weight: 800;
+        padding: auto;
+      }
+      /* falta imagen de header */
+
+      header {
+        display: grid;
+        padding: 20px;
+        gap: 10px;
+      }
+      header h1 {
+        padding-bottom: 10px;
+      }
+      header div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
+      }
+      header div h2 {
+        font-size: 3.8em;
+        color: #80295f;
+      }
+      header div h3 {
+        height: 20px;
+        background-color: #018c6e;
+        color: white;
+        display: inline-block;
+        text-align: center;
+        padding: 10%;
+        margin-bottom: 0;
+      }
+      main {
+        background-color: #f5f5f5;
+        padding-bottom: 20px;
+      }
+      main h2 {
+        font-size: 1.7em;
+        padding: 10px 20px;
+        color: #15669c;
+      }
+      main section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 30px;
+        gap: 20px;
+      }
+      main section div {
+        width: 240px;
+      }
+      main section div img {
+        width: 80px;
+      }
+      main section div p {
+        margin-top: 10px;
+      }
+      footer {
+        background-color: white;
+      }
+      form {
+        background-color: #ededed;
+        max-width: 98%;
+        margin: 0 auto;
+        font-size: 0.9em;
+        padding: 20px 0;
+      }
+      fieldset {
+        border: none;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        list-style: none;
+        gap: 20px;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      li input,
+      li select {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        height: 30px;
+        padding: 5px;
+      }
+      .checkbox {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      #submit {
+        color: white;
+        background-color: #049288;
+        height: 40px;
+        margin-top: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ESCUELA DE NEGOCIOS</h1>
+      <div>
+        <h2>CURSOS</h2>
+
+        <h3>PARA LOS QUE BUSCAN<br />ACTUALIZAR SUS CONOCIMIENTOS</h3>
+      </div>
+    </header>
+    <main>
+      <h2>ANÁLISIS DE ESTADOS<br />FINANCIEROS</h2>
+      <section>
+        <div>
+          <img src="imagenes/imagen1_tarea4.png" />
+          <p>
+            Conocer y aplicar indicadores financieros para la toma de decisiones
+            estratégicas.
+          </p>
+        </div>
+        <div>
+          <img src="imagenes/imagen2_tarea4.png" />
+          <p>
+            Detectar cuáles son los puntos fuertes y débiles de una compañía.
+          </p>
+        </div>
+        <div>
+          <img src="imagenes/imagen3_tarea4.png" />
+          <p>
+            Obtener herramientas para proyectar el comportamiento futuro de la
+            empresa.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <form>
+        <fieldset>
+          <legend>Ingresa tus datos y te contactaremos a la brevedad.</legend>
+          <ul>
+            <li>
+              <label for="nombre">Nombre (*)</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                pattern="^([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)(\s([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)){0,}"
+              />
+            </li>
+            <li>
+              <label for="apellido">Apellidos (*)</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                required
+                pattern="^(([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)|(del?|las?|los?))+((\s([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)|(\sdel?|\slas?|\slos?))+){0,}"
+              />
+            </li>
+            <li>
+              <label for="email">E-mail (*)</label>
+              <input type="email" id="email" name="email" required />
+            </li>
+            <li>
+              <label for="telefono">Teléfonos (*)</label>
+              <input
+                type="telefono"
+                id="telefono"
+                name="telefono"
+                required
+                pattern="(\d{9})|(\+\d{9})"
+              />
+            </li>
+            <li>
+              <p>Sexo</p>
+              <select name="sexo">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="otro">Otros</option>
+              </select>
+            </li>
+            <li>
+              <p>País de procedencia</p>
+              <select name="pais">
+                <option value="espana">España</option>
+                <option value="portugal">Portugal</option>
+                <option value="francia">Francia</option>
+                <option value="italia">Italia</option>
+              </select>
+            </li>
+            <li>
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" />
+            </li>
+            <li>
+              <label for="cargo">Cargo</label>
+              <input type="text" id="cargo" name="cargo" />
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="info" name="info" />
+              <label for="info"
+                >Quiero recibir información sobre otros programas</label
+              >
+            </li>
+            <li>
+              <input type="submit" value="Quiero más información" id="submit" />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </footer>
+  </body>
+</html>

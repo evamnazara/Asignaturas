@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reinados
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="6.xsd">
+   <reinado dende="1808-03-19" ata="1808-05-06">
+      <rei codigo="HF12"/>
+   </reinado>
+   <reinado dende="1808-06-06" ata="1813-12-11">
+      <rei codigo="PB02"/>
+      <consorte dende="1808-06-06" ata="1813-12-11">Julia Clary</consorte>
+   </reinado>
+   <reinado dende="1833-09-29" ata="1833-09-29">
+      <rei codigo="HF12"/>
+      <consorte dende="1808-08-11" ata="1813-12-11">María Josefa de Sajonia</consorte>
+      <consorte dende="1813-12-11" ata="1833-09-29">María Cristina de Borbón-Dos Sicilias</consorte>
+   </reinado>
+   <reinado dende="1833-08-11" ata="1868-09-30">
+      <raiña codigo="MB10"/>
+      <consorte dende="1833-09-29" ata="1868-09-30">Francisco de Asís de Borbón</consorte>
+   </reinado>
+   <reinado dende="1870-11-16" ata="1873-02-11">
+      <rei codigo="HA87"/>
+      <consorte dende="1870-11-16" ata="1873-02-11">María Victoria del Pozzo de la Cisterna</consorte>
+   </reinado>
+   <persoa codigo="MB10">
+      <nome>Isabel II</nome>
+      <apodo>a dos Tristes Destiños</apodo>
+      <pai>HF12</pai>
+      <nai>MC32</nai>
+      <casa>Borbón</casa>
+   </persoa>
+   <persoa codigo="HF12">
+      <nome>Fernando VII</nome>
+      <apodo>o rei Felón</apodo>
+      <apodo>o desexado</apodo>
+      <casa>Borbón</casa>
+   </persoa>
+   <persoa codigo="HA87">
+      <nome>Amadeo I</nome>
+      <apodo>o rei cabaleiro</apodo>
+      <casa>Saboya</casa>
+   </persoa>
+   <persoa codigo="PB02">
+      <nome>José I</nome>
+      <apodo>Pepe Botella</apodo>
+      <casa>Bonaparte</casa>
+   </persoa>
+</reinados>

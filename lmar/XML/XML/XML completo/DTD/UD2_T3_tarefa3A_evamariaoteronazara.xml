@@ -1,0 +1,34 @@
+<!-- 
+TAREFA 3A 
+<?xml version="1.1"?>
+-->
+
+
+
+<?xml version="1.1"?>
+<ciclo familia="IFC" nome="DAM"> 
+	<!-- GS o GM --> 
+	<grado> CS </grado>
+	<modulosprimeiro> 
+		<modulo nome="Programacion" sesionsSemanais="9"> </modulo>
+		<modulo nome="BBDD" sesionsSemanais="8"> </modulo>
+		<modulo nome="LMAR" sesionsSemanais="4"> </modulo>
+		<modulo nome="SINF" sesionsSemanais="6"> </modulo>
+		<modulo nome="Contornos" sesionsSemanais="4"> </modulo>
+		<modulo nome="Ingles" sesionsSemanais="2"> </modulo>
+		<modulo nome="Sustentabilidade " sesionsSemanais="1"> </modulo>
+	</modulosprimeiro>
+
+</ciclo>
+
+
+<!-- COMENTARIOS DE CORRECCIÓN:
+
+	VÁLIDO ASÍ O; 
+	
+		<ciclo> 
+			<nome></nome>
+			<familia></familia>
+			<modulo></modulo>
+		</ciclo>
+-->

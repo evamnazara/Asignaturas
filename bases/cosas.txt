@@ -1,0 +1,4 @@
+bases tema 7 
+resetear el ultimo valor 
+dbcc checkindent (nombreTabla,reseed,nuevoValor)
+

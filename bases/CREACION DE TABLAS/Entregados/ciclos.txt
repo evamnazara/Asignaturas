@@ -1,0 +1,54 @@
+Tarea 3 - Ciclos formativos
+
+
+Se pide:
+    1. Establece las claves candidatas, primaria y alternativas de la relación anterior.
+    2. Comenta los problemas y anomalías que encuentras en la relación anterior.
+    3. Normaliza la anterior relación hasta FNBC.
+
+CICLOS (Cod_Familia,  Familia, cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, localidad, titulo, grao, plazas_ofertadas, matriculados) 
+Anomalías y redundancias:
+Redundancias: horas, cod_familia, familia, 
+	inserción:  
+	modificación: 
+
+Dependencias funcionales: 
+	cod_Familia →  Familia +  cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, localidad, titulo, grao, plazas_ofertadas, matriculados
+	cod_Ciclo →  nombre_ciclo,  horas,  titulo, grao, plazas_ofertadas, matriculados
+	cod_Centro →  nom_Centro, localidad
+	cod_Centro ↔ nom_Centro
+
+Claves candidatas: 
+	cod_Ciclo.
+
+1FN) La tabla cumple la 1FN. Los atributos son atómicos.
+
+2FN) Sí cumple. 
+	CICLO (Cod_Familia,  Familia, cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, localidad, titulo, grao, plazas_ofertadas, matriculados)
+
+3FN) No cumplen: 
+1. 	cod_Familia →  Familia
+Desc 1: 
+	FAMILIA: (Cod_Familia,  Familia)
+	CICLO: (cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, localidad, titulo, grao, 			plazas_ofertadas, matriculados)
+ 2.  cod_Centro →  nom_Centro, localidad
+Desc2: 
+		FAMILIA: (Cod_Familia,  Familia)
+		CICLO: (cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, localidad, 				titulo, grao, plazas_ofertadas, matriculados) 
+		CENTRO (cod_Centro, nom_Centro, localidad)
+
+3. plazas_ofertadas → matriculados
+		FAMILIA: (Cod_Familia,  Familia)
+		CICLO: (cod_Ciclo, nombre_ciclo, cod_Centro, nom_Centro, horas, 				titulo, grao) 
+		CENTRO (cod_Centro, nom_Centro, localidad, plazas ofertadas)
+		MATRICULADOS (cod_Centro, matriculados)
+
+
+FNBC) CICLO y CENTRO no cumplen.
+
+TABLA FINAL: 
+		FAMILIA: (Cod_Familia,  Familia)
+		CICLO: (cod_Ciclo, nombre_ciclo, horas, titulo, grao) 
+		CENTRO (cod_Centro, nom_Centro, localidad, plazas ofertadas)
+		MATRICULADOS (cod_Centro, matriculados)
+

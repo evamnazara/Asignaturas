@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Informe SYSTEM "UD3_T7_tarefa7B_evaoteronazara.dtd">
+<Informe>
+    <!-- la descripcion es optativa -->
+    <Descripción>Seguros </Descripción>
+    <Seguro tipo="Edificio">
+        <Numero>20</Numero>
+        <Cliente-Personal>Eva María Otero </Cliente-Personal>
+    </Seguro>
+
+    <Seguro tipo="Contenido">
+        <Numero>21</Numero>
+        <Cliente-Empresa>IES Chan do Monte </Cliente-Empresa>
+    </Seguro>
+
+    <!-- fechafin es implied  -->
+    <FechaInforme FechaInicio="14-02-2025" FechaFin="14-02-2026"/>
+</Informe>

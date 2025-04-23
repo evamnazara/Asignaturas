@@ -1,0 +1,104 @@
+ 
+<oscar 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="7A.xsd" 
+    
+    ano="2013">
+<película codigo="FO-80001">
+    <título>Argo</título>
+    <ano>2012</ano>
+    <xéneros>Thriller Drama</xéneros>
+    <duración>120</duración>
+    <nominacións>
+        <mellorPelícula oscar="SI"/>
+        <mellorActorSecundario ref="EF-Y10"/>
+    </nominacións>
+</película>
+<película codigo="FE-7586">
+    <título>El lado bueno de las cosas</título>
+    <títuloOrixinal>Happiness therapy</títuloOrixinal>
+    <ano>2012</ano>
+    <xéneros>Comedia Drama</xéneros>
+    <duración>122</duración>
+    <nominacións>
+        <mellorPelícula/>
+        <mellorDirector ref="EF-Y10"/>
+        <mellorActriz ref="OT-A23" oscar="SI"/>
+        <mellorActor ref="OH-R23"/>
+        <mellorActrizSecundaria ref="EW-A99"/>
+        <mellorActorSecundario ref="UR-M9"/>
+    </nominacións>
+</película>
+<película codigo="PO-81004">
+    <título>Los miserables</título>
+    <ano>2012</ano>
+    <xéneros>Musical Drama</xéneros>
+    <duración>152</duración>
+    <nominacións>
+        <mellorPelícula/>
+        <mellorActor ref="UH-M77"/>
+        <mellorActrizSecundaria ref="AH-R50"/>
+    </nominacións>
+</película>
+<película codigo="AN-7699">
+    <título>La vida de Pi</título>
+    <nominacións>
+        <mellorDirector ref="AL-E97" oscar="SI"/>
+        <mellorPelícula/>
+    </nominacións>
+</película>
+<película codigo="LI-7989">
+    <título>Lo imposible</título>
+    <ano>2012</ano>
+    <nacionalidade>Española</nacionalidade>
+    <xéneros>Drama</xéneros>
+    <duración>107</duración>
+    <nominacións>
+        <mellorActriz ref="EX-E5"/>
+    </nominacións>
+</película>
+<película codigo="NN-7599">
+    <título>No</título>
+    <nacionalidade>Chilena</nacionalidade>
+    <nominacións>
+        <mellorLinguaNonInglesa/>
+    </nominacións>
+</película>
+<persona codigo="EX-E5" sexo="Muller">
+    <nome>Naomi Watts</nome>
+    <idade>45</idade>
+</persona>
+<persona codigo="EF-Y10" sexo="Home">
+    <nome>Alan Arkin</nome>
+</persona>
+<persona codigo="AH-R50" sexo="Muller">
+    <nome>Anne Hathaway</nome>
+<idade>30</idade>
+</persona>
+<persona codigo="OH-R23" sexo="Home">
+    <nome>Bradley Cooper</nome>
+    <idade>38</idade>
+</persona>
+<persona codigo="OT-A23" sexo="Muller">
+    <nome>Jennifer Lawrence</nome>
+</persona>
+<persona codigo="UR-M9" sexo="Home">
+    <nome>Robert de Niro</nome>
+    <idade>69</idade>
+</persona>
+<persona codigo="EW-A99" sexo="Muller">
+    <nome>Jacki Weaver</nome>
+</persona>
+
+<persona codigo="UH-M77" sexo="Home">
+    <nome>Hugh Jackman</nome>
+    <idade>44</idade>
+</persona>
+
+<persona codigo="AL-E97" sexo="Home">
+    <nome>Ang Lee</nome>
+</persona>
+<persona codigo="AB-E97" sexo="Home">
+    <nome>Prueba</nome>
+</persona>
+</oscar>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="instituto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="alumno" type="tipoalumno" maxOccurs="unbounded"/>
+                <xs:element name="profesor" type="tipoprofesor" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipoalumno">
+        <xs:sequence>
+            <xs:element name="texto" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="numExpedente" type="numeroExpedente" use="required"/>
+        <xs:attribute name="nome" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido1" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido2" type="nombreApellido" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoprofesor">
+        <xs:sequence>
+            <xs:element name="texto" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="NRP" type="tipoNRP" use="required"/>
+        <xs:attribute name="nome" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido1" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido2" type="nombreApellido" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipopersona">
+        <xs:sequence>
+            <xs:element name="texto" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="nome" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido1" type="nombreApellido" use="required"/>
+        <xs:attribute name="apelido2" type="nombreApellido" use="required"/>
+    </xs:complexType>
+
+    <!-- restricciones --> 
+
+    <xs:simpleType name="nombreApellido">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-ZÁÉÍÓÚÑ][a-záéíóúñ]*\s?)+"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="numeroExpedente">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoNRP">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3,4}[A-E]\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

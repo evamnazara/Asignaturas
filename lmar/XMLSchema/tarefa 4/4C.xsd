@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="panaderias">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="panaderia" type="tipopanaderia" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipopanaderia">
+        <xs:sequence>
+            <xs:element name="idPanadería" type="xs:string"/>
+            <xs:element name="domicilio" type="xs:string" minOccurs="0"/>
+            <xs:element name="telefono" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="pedido" type="tipopedido" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipopedido">
+        <xs:sequence>
+            <xs:element name="fecha" type="tipofecha"/>
+            <xs:element name="ingrediente" type="tipoingrediente" maxOccurs="15"/>
+        </xs:sequence>
+        <xs:attribute name="numPedido" type="xs:string" use="required"/>
+        <xs:attribute name="tipo">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="urgente"/>
+                    <xs:enumeration value="normal"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:default value="normal"/>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoingrediente">
+        <xs:sequence>
+            <xs:element name="idIngrediente" type="xs:string"/>
+            <xs:element name="ano" type="tipoAno"/>
+            <xs:element name="origen" minOccurs="0">
+                <xs:complexType>
+                    <xs:attribute name="continente" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoAno">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1970"/>
+            <xs:maxInclusive value="2050"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipofecha">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}-\d{2}-\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,13 @@
+<personas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="2B_B.xsd">
+    <persona>
+        <nombre>nombre</nombre>
+        <apellido>apellido</apellido>
+        <fechanacimiento>1998-01-30</fechanacimiento>
+        <numerodocumento>123</numerodocumento>
+        <trianero>false</trianero>
+    </persona>
+    
+</personas>
+
+<!-- las respuestas en un txt -->

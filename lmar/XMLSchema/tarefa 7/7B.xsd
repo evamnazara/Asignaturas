@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:include schemaLocation="7B_grupo.xsd"/>
+
+  <xs:element name="instituto">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="alumno" type="alumnoType"/>
+        <xs:element name="profesor" type="profesorType" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="alumnoType">
+    <xs:sequence>
+      <xs:element name="altura" type="alturaType"/>
+    </xs:sequence>
+    <xs:attribute name="numExpedente" type="xs:string" use="required"/>
+    <xs:attributeGroup ref="nombreCompleto"/>
+  </xs:complexType>
+
+  <xs:complexType name="profesorType">
+    <xs:attribute name="NRP" type="xs:string" use="required"/>
+    <xs:attributeGroup ref="nombreCompleto"/>
+  </xs:complexType>
+
+  <!-- Tipo para altura -->
+  <xs:simpleType name="alturaType">
+      <xs:union>
+          <xs:simpleType>
+              <xs:restriction base="xs:unsignedByte">
+                  <xs:minExclusive value="21" />
+              </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+              <xs:restriction base="xs:string">
+                  <xs:enumeration value="Alto"/>
+                  <xs:enumeration value="Baixo"/>
+              </xs:restriction>
+          </xs:simpleType>
+      </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="alturaNumerica">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

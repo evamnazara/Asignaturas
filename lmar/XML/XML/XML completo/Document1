@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Completa  el DTD siguiendo las siguientes especificaciones y haz tu currículum vitae en formato XML comprobando que valida:
+
+Introduce un atributo notamedia opcional de los estudios.
+
+En caso de haber realizado prácticas en una o más empresas asociadas a un estudio en concreto 
+queremos saber el nombre de la empresa y las horas 
+realizadas en esta.
+
+Idiomas debe ser un elemento vacío con un atributo obligatorio nombre 
+que tomará por defecto el valor "galego" y un atributo nivel que puede tomar los valores bajo, medio o alto. 
+
+Por defecto tomará el valor medio.
+ -->
+<!ELEMENT curriculumVitae (presentación, (estudios | experienciaLaboral)+, (idiomas | deportes | otros)*, referencias*, observaciones?)>
+

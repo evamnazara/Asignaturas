@@ -1,0 +1,17 @@
+a.) As máquinas que contén o documento.
+	/equipos/máquina
+
+b.) A información correspondente ao hardware das máquinas.
+	/equipos/máquina/hardware
+
+c.) A información de configuración das máquinas.
+	/equipos/máquina/config
+
+d.) A lista de fabricantes dos equipos.
+	/hardware/fabricantes
+
+e.) A lista de discos que conteñen.
+	/hardware/disco
+
+f.) As direccións IP.
+	/equipos/máquina/config/IP

@@ -1,0 +1,9 @@
+<persona  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="2B_A.xsd">
+    <nombre>nombre</nombre>
+    <apellido>apellido</apellido>
+    <apellido>apellido</apellido>
+    <fechanacimiento>1998-01-30</fechanacimiento>
+    <numerodocumento>123</numerodocumento>
+    <trianero>false</trianero>
+</persona>

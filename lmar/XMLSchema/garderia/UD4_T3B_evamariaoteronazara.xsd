@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+   <xs:element name="garderia">
+      <xs:complexType>
+          <xs:sequence>
+                <xs:element name="neno" minOccurs="1" maxOccurs="50" type="tipoNeno"/>
+          </xs:sequence>
+          
+   </xs:complexType>
+   
+   </xs:element>
+      <xs:complexType name="tipoNeno">
+   <xs:sequence>
+         <xs:element name="nome" type="nome"/>
+         <xs:element name="dataNacemento" type="date"/>
+         <xs:element name="peso" type="peso"/>
+         <xs:element name="altura" type="xs:unsignedByte"/>
+         <xs:element name="vacunas" type="xs:boolean"/>
+   </xs:sequence>
+         <xs:attribute name="numeroExpedente" type="xs:unsignedShort"/>
+         <xs:attribute name="sexo" type="sexo"/>
+         <xs:attribute name="codigoNeno" type="codigoNeno"/>
+   </xs:complexType>
+   
+   <xs:simpleType name="sexo">
+       <xs:restriction base="xs:string">
+           <xs:pattern value="[H|M]">  
+           </xs:pattern>
+       </xs:restriction> 
+   </xs:simpleType>
+   
+   <xs:element name="nome"> 
+    <xs:simpleType name="nome">
+        <xs:restriction base="xs:string">
+            <xs:minInclusive value="3"/>
+            <xs:maxInclusive value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+   </xs:element>
+   
+   
+    <xs:simpleType name="peso">
+       <xs:restriction base="xs:string">
+           <xs:fractionDigits value="1"/>
+       </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigoNeno">
+       <xs:restriction base="xs:string">
+           <xs:pattern value="(P|M)([3-7](2))-?([0-9](3))"/>
+       </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

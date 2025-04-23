@@ -1,0 +1,34 @@
+RELACIONES REDUNDANTES
+
+Las redundancias son siempre redondas
+- Si la cardinalidad es N:N:N lo más probable es que no se pueda descomponer
+- Si es 1:N:N la cardinalidad 1 es la sospechosa.
+- mas sus es la N:N:1
+
+MODELO RELACIONAL:
+
+Las relaciones 1:N se pasa la clave del 1 al de la N 
+    se propaga la clave del 1 al N 
+Si son 2N se pasan 2 veces y forman parte de la clave (PERRO: nPerro, espadre*, esmadre*)
+
+
+PERRO: numPerro, nombrePerro (alt) sexo, raza, esmadre, espadre (<- rel 2:2)
+                                                 // reflexiva consigo misma
+
+PERRO - PROPIERTARIO: DNIDueño, numPerro, fechaCompra
+
+PROPIETARIO:
+
+EXPOSICION: nombreExpo, pais, tipo 
+
+EDICION: numEdicion, lugar, fechaInicio, fechaFin 
+
+PERRO / EDICION: numEdicion, nombreExposicion, numPerro, fechaInscripcion
+                                > se pasa tambien pq forma parte de la clave de edicion
+
+COMPETICION: nombreCompeticion, numeroEdicion, nombreExposicion, perroGanador, Juez
+                                //subrayada
+
+JUEZ
+
+

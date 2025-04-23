@@ -1,0 +1,122 @@
+<!-- Formulario para realizar reservas.
+ 
+Queremos tener información del 
+    nombre, apellidos, 
+    teléfono de contacto y 
+    correo electrónico de la persona que hacer la reserva.
+    La edad estará entre 18 y 100, teniendo como valor de partida el 18
+    Los campos requeridos tendrán un borde rojo.
+    Introduce un mensaje para que se visualice cuando el valor introducido no cumple las reglas de validación.
+    Recoger información de la fecha de entrada y el número de noches que quiere reservar.
+    Debe poder escoger entre habitación individual, doble o de matrimonio.
+    Deberá poder seleccionar si desea los siguientes extras: 
+        Desayuno, cuna y cama supletoria.
+    
+    Un espacio para introducir las observaciones que quiera añadir el cliente a la reserva.
+    
+    EXTRA: 
+    Nombres de personas con la primera letra en mayúsculas y las siguientes en minúsculas. Debe permitir nombres compuestos como María Antonia.
+
+    Una contraseña que debe tener como mínimo 6 caracteres 
+    (que podrán ser letra minúscula, números o un guión).
+
+    Un código de ciclo, teniendo en cuenta que, tiene 7 caracteres,
+    de los cuales, el primero siempre es C, el segundo puede ser S ó M
+    los tres siguientes son letras y los dos últimos números.
+
+    Matrículas actuales españolas.
+
+    El valor introducido está formado por un mínimo de 5 letras 
+    (mayúsculas o minúsculas) y un máximo de 10.
+    Un botón de limpiar pantalla y 
+    otro de enviar que llamará a la página "alta_reserva.php"
+
+Se valorará:
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Repaso Formularios</title>
+
+    <style>
+      div.contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        width: 500px;
+        background-color: slategray;
+        border: 3px solid lightsteelblue;
+        font-size: 14px;
+      }
+
+      .columna1 {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      .columna2 {
+        flex: 2;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form input:required {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Repaso formulario.</h1>
+    <div class="contenedor">
+      <form method="GET" action="/alta_reserva.php">
+        <legend>Información del cliente.</legend>
+        <fieldset>
+            <div>
+          <label for="Nombre completo" class="columna1"></label>
+            Nombre completo:
+          </label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Inserte nombre completo"
+            pattern=""
+            class="columna2"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="Telefono de contacto" class="columna1"> Teléfono: </label>
+
+          <input
+            type=""
+            id=""
+            name=""
+            placeholder=""
+            pattern=""
+            class="columna2"
+          />
+        </div>
+        <div>
+            <input type="date"
+            >
+
+        </div>
+        </fieldset>
+
+        <legend> Otros tipos de datos: </legend>
+        <fieldset>
+
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

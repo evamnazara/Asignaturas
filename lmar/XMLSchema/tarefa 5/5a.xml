@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edificio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="5a.xsd"
+    
+    alquiler="verdadeiro" 
+    valor="410.50" >
+   <enderezo>
+      <rua>Ponzano</rua>
+      <numero>66</numero>
+      <poboacion>Madrid</poboacion>
+      <provincia>Madrid</provincia>
+      <codigoPostal>28003</codigoPostal>
+   </enderezo>
+   <dataConstrucion mes="Febreiro" ano="1989" />
+   <material>formigón</material>
+</edificio>

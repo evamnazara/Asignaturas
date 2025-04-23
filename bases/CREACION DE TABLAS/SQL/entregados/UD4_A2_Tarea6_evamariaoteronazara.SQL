@@ -1,0 +1,145 @@
+------ CORCHETES EN LA LINEA 106 
+
+
+-- ej 1
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'BD_AlterDB1')
+    BEGIN
+    DROP DATABASE BD_AlterDB1;
+    END 
+CREATE DATABASE BD_AlterDB1
+
+ALTER DATABASE BD_AlterDB1 
+ADD FILE (
+    NAME = BD_AlterDB1_Data,
+    FILENAME = 'C:\BD_AlterDB1_Data.ndf',
+    SIZE = 3MB,
+    FILEGROWTH = 2MB
+);
+
+
+ALTER DATABASE BD_AlterDB1
+MODIFY FILE (
+    NAME = BD_AlterDB1_Data,
+    SIZE = 5MB
+);
+
+-- NO FUNCIONA 
+ALTER DATABASE BD_AlterDB1
+MODIFY FILE (
+    NAME = BD_AlterDB1_Data,
+    SIZE = 3MB
+);
+GO
+
+-- ej 2
+
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'BD_AlterDB2')
+    BEGIN
+    DROP DATABASE BD_AlterDB2;
+    END 
+CREATE DATABASE BD_AlterDB2
+
+ON PRIMARY (
+    NAME = BD_AlterDB2_Data,
+    FILENAME = 'C:\BD_AlterDB2_Data.mdf',
+    SIZE = 3MB,
+    MAXSIZE = 4MB,
+    FILEGROWTH = 0
+);
+
+
+-- NO FUNCIONA 
+-- (aumentar tamaño a 6MB sin modificar MAXSIZE) 
+ALTER DATABASE BD_AlterDB2
+MODIFY FILE (
+    NAME = BD_AlterDB2_Data,
+    SIZE = 6MB
+);
+
+GO 
+
+-- ej 3
+
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'BD_AlterDB3')
+    BEGIN
+    DROP DATABASE BD_AlterDB3;
+    END 
+CREATE DATABASE BD_AlterDB3 
+
+ON PRIMARY (
+    NAME = BD_AlterDB3_Data1,
+    FILENAME = 'C:\BD_AlterDB3_Data1.mdf',
+    SIZE = 3MB,
+    MAXSIZE = 10MB,
+    FILEGROWTH = 1MB
+);
+
+ALTER DATABASE BD_AlterDB3 
+ADD FILE (
+    NAME = BD_AlterDB3_Data2,
+    FILENAME = 'C:\BD_AlterDB3_Data2.ndf',
+    SIZE = 5MB,
+    MAXSIZE = 15MB,
+    FILEGROWTH = 2MB
+);
+
+ALTER DATABASE BD_AlterDB3
+ADD FILEGROUP Grupo1;
+
+
+ALTER DATABASE BD_AlterDB3
+ADD FILE (
+    NAME = BD_AlterDB3_Data3,
+    FILENAME = 'C:\BD_AlterDB3_Data3.ndf',
+    SIZE = 1MB,
+    FILEGROWTH = 10%
+) TO FILEGROUP Grupo1;
+
+
+ALTER DATABASE BD_AlterDB3
+ADD FILE (
+    NAME = BD_AlterDB3_Data4,
+    FILENAME = 'C:\BD_AlterDB3_Data4.ndf',
+    SIZE = 1MB,
+    FILEGROWTH = 10%
+) TO FILEGROUP Grupo1;
+go 
+exec 
+
+------ CORCHETES
+ALTER DATABASE BD_AlterDB3
+MODIFY FILEGROUP [Grupo1] DEFAULT;
+------ CORCHETES
+
+-- ej 4
+ALTER DATABASE BD_AlterDB3
+REMOVE FILE BD_AlterDB3_Data3;
+
+
+-- ej 5
+ALTER DATABASE BD_AlterDB3
+MODIFY FILE (
+    NAME = BD_AlterDB3_Data1,
+    SIZE = 4MB,
+    FILEGROWTH = 3MB
+);
+
+
+-- ej 6
+ALTER DATABASE BD_AlterDB3
+MODIFY FILEGROUP Grupo1 READ_ONLY;
+
+ALTER DATABASE BD_AlterDB3
+MODIFY FILEGROUP Grupo1 READWRITE;
+ 
+
+
+-- eliminar grupo de archivos?  
+ALTER DATABASE BD_AlterDB3
+REMOVE FILE BD_AlterDB3_Data4;
+
+ALTER DATABASE BD_AlterDB3
+REMOVE FILEGROUP Grupo1;
+
+exec sp_helpfilegroup 
+

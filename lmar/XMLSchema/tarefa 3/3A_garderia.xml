@@ -1,0 +1,28 @@
+<garderia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="3B_garderia.xsd">
+  <neno  numeroExpedente="1" sexo="M" codigoNeno="P44-100">
+      <nome>Andrea</nome>
+      <dataNacemento>2022-01-30</dataNacemento>
+      <peso>10.2</peso>
+      <altura>35</altura>
+      <vacunas>true</vacunas>
+      <contacto parentesco="nai" telefono="666555444"></contacto>
+      <idade anos="2" meses="1"/>
+  </neno>
+</garderia>
+<!--
+engadir ao neno un elemento sexo obrigatorio que pode tomar os valores H ou M.
+o elemento peso debe ter como máximo un decimal.
+o tamaño mínimo do nome será de 3 caracteres e o máximo de 80.
+engadir ao neno un atributo codigo que terá o seguinte formato:
+o primeiro caracter será unha P ou unha M
+a continuación irán dous número entre o 3 e o 7
+a continuación pode levar un - e tres díxitos máis.
+Posibles exemplos deste serían: P44, P44-323, P65-100
+engadir ao neno os teléfonos de contacto. Para elo crearase un elemento contacto por cada teléfono que teñamos do neno. O elemento debe ter:
+un atributo relación para indicar o parentesco co neno, que só poderá tomar os seguintes valores: nai, pai, avó/a, titor, outra.
+o teléfono debe permitir introducir unicamente 9 números.
+como moito gardaremos 4 contactos por cada neno.
+incluir un elemento idade baleiro en neno con dous atributos:
+un atributo anos que pode tomar valores entre 0 e 3
+un atributo meses que pode tomar valores entre 0 e 11 -->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>¡Ganaste!</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  </head>
+  <body class="ganador">
+    <div id="centro">
+      <img id="minoca2" src="img/minoca2.png" />
+      <div class="contenido2">
+        <h1 class="ganador">¡felicidades!</h1>
+        <p class="ganador" id="mensaje"></p>
+        <a href="atrapaminoca.html" class="ganador">Volver a jugar</a>
+      </div>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const tiempo = params.get("tiempo");
+      document.getElementById(
+        "mensaje"
+      ).textContent = `Has atrapado a Miñoca 10 veces en ${tiempo} segundos.`;
+    </script>
+  </body>
+</html>

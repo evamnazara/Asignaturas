@@ -1,0 +1,21 @@
+/* */
+
+<link rel="stylesheet” type="text/css” href="carpeta/css.css”> 
+
+<a target=“_blank”>
+
+nav ul >> display flex
+___
+
+separar header 
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%; 
+}
+
+clase {flex: 1; }
+
+color: rgb(255,0,0);

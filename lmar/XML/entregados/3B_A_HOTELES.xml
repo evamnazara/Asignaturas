@@ -1,0 +1,36 @@
+<?xml version="1.1"?>
+<!-- safari -->
+
+<hoteles>
+    <hotel estrellas="4">
+        <nombre> Hotel-Spa Augusta Resort </nombre>
+        <direccion>
+            <calle>Rúa Padriñán</calle>
+            <numero>25</numero>
+            <ciudad>Sanxenxo</ciudad>
+            <pais>España</pais>
+        </direccion>
+        <telefono>986778866</telefono>
+        <descripcion>Hotel con vistas al mar, centro SPA y buffet de desayuno </descripcion>
+        <habitaciones>
+            <individuales>30</individuales>
+            <dobles>60</dobles>
+        </habitaciones>
+    </hotel>
+    <hotel estrellas="5">
+        <nombre>Hotel Carlos I Silgar</nombre>
+        <telefono>986223344</telefono>
+        <direccion>
+            <calle>Rúa de Vigo</calle>
+            <numero>1</numero>
+            <ciudad>Sanxenxo</ciudad>
+            <pais>España</pais>
+        </direccion>
+        <descripcion>Situado en pleno centro de Sanxenxo y a un paso de la conocida Playa de Silgar, 
+        haremos de tu estancia una experiencia única e irrepetible. </descripcion>
+        <habitaciones>
+            <individuales>50</individuales>
+            <dobles>80</dobles>
+        </habitaciones>
+    </hotel>
+</hoteles>

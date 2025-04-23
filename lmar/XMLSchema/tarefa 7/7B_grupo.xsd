@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:attributeGroup name="nombreCompleto">
+    <xs:attribute name="nome" type="xs:string" use="required"/>
+    <xs:attribute name="apelido1" type="xs:string" use="required"/>
+    <xs:attribute name="apelido2" type="xs:string" use="optional"/>
+  </xs:attributeGroup>
+  
+  <xs:annotation>
+      <xs:documentation>
+          Esquema de definición comunes:
+          Grupo de atributos para nombre completo 
+      </xs:documentation>
+  </xs:annotation>
+  <!-- <xs:simpleType name="tipoNombre">
+      <xs:restriction base="xs:string">
+          <xs:pattern value=""
+      </xs:restriction>
+  </xs:simpleType> -->
+
+</xs:schema>

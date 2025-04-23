@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<style>
+	
+	
+		h1 { 
+			color: #AD6FA0;
+			font-family: Verdana;
+		}
+		
+		input.botones {
+			color: #AD6FA0;
+			float: right;
+			margin-left: 10px;
+			padding: 5px;
+		}
+		fieldset {
+			border: 1px solid #9D9FF9;
+			margin-bottom: 5px;
+		}
+		
+		body {
+			font-family: Arial;
+			font-weight: bold;
+			font-size: 13px;
+		}
+		
+		button {
+			color: #AD6FA0;
+		}
+		
+		form {
+			color: #9D9FF9;
+			width: 700px;
+		}
+		
+		ul.respuestas li, ol.respuestas li {
+			color: #444444;
+			list-style-type: lower-latin;
+		}
+		ul.respuestas li {
+			list-style-type: none;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<h1>Cuestionario de HTML</h1>
+	
+	<form>	
+	<ol> 
+		<li> <fieldset class="color">
+			<label for="listas"> Las etiquetas &lt;ol&gt; y &lt;li&gt; se emplean para: </label>
+			<ol class="respuestas"> 
+				<li>
+				<input 
+					type="radio" 
+					name="listas" 
+					id="listas1" 
+					value="listas1"> 
+					<label for="listas1"> Una tabla
+				</li>
+				
+				<li><input type="radio" name="listas" id="listas2" value="listas2"> <label for="listas2">Una lista ordenada</li>
+				
+					<li><input type="radio" name="listas" id="listas3" value="listas3"> <label for="listas3">Una lista desordenada</li>
+			</ol>
+
+		</fieldset>	</li>
+		
+		<li> <fieldset>
+		
+		<label for="idioma"> Las etiquetas &lt;ol&gt; y &lt;li&gt; se emplean para: </label>
+			<ol class="respuestas"> 
+			
+				<li><input type="radio" name="idioma" id="idioma1" value="idioma1"> <label for="idioma1"> &lt;html lang="es"&gt; </li>
+				<li><input type="radio" name="idioma" id="idioma2" value="idioma2"> <label for="idioma2"> &lt;head id="es"&gt; </li>
+				<li><input type="radio" name="idioma" id="idioma3" value="idioma3"> <label for="idioma3">&lt;head lang="es"&gt; </li>
+			</ol>
+			
+		</fieldset> </li>
+		
+		<li> <fieldset>
+			<label for="tabla"> Indica que etiqueta se usa en HTML para definir el titulo de una tabla: </label>
+			
+			<input type="text" name="tabla" id="tabla"/>
+
+		</fieldset> </li>
+		
+		<li> <fieldset>
+		
+			<label for="td">¿Qué define la etiqueta &lt;td&gt; en HTML?  </label>
+			
+			<ol class="respuestas"> 
+			
+				<li><input type="radio" name="td" id="td1" value="td1"> <label for="td1"> Una fila en una tabla </li>
+				<li><input type="radio" name="td" id="td2" value="td2"> <label for="td2"> Un elemento en una lista de definición </li>
+				<li><input type="radio" name="td" id="td3" value="td3"> <label for="td3"> Una celda en una tabla </li>
+			</ol>
+
+		</fieldset> </li>
+		
+		<li> <fieldset>
+					<label for="css">Describe cómo se puede incluir el CSS en una página HTML  </label>
+					
+					<textarea id="css" name="css" rows="4" cols="40" placeholder="justifica"> </textarea>
+		</fieldset> </li>
+		
+		<li> <fieldset>
+					<label for="afirmaciones"> Selecciona las afirmaciones verdaderas:  </label>
+					<ul class="respuestas">
+						<li> <input type="checkbox" name="respuestas" id="respuestas1"> 
+							<label for="respuestas1">
+							En HTML, para crear un hipervínculo se utiliza &lt;href&gt; </li>
+
+						<li> 
+							<input type="checkbox" name="respuestas" id="respuestas2"> 
+							<label for="respuestas1">
+								Los elementos de una lista desplegable se definen con li. 
+							</label>
+						</li>
+						<li> <input type="checkbox" name="respuestas" id="respuestas3">
+							Los atributos &lt;rowspan&gt; y &lt;colspan&gt; son atributos de la etiqueta &lt;div&gt;. </li>
+						<li> <input type="checkbox" name="respuestas" id="respuestas4"> 
+							Las etiquetas &lt;h1&gt; y &lt;h2&gt; se utilizan para definir encabezados. </li>
+						<li> <input type="checkbox" name="respuestas" id="respuestas5"> 
+							La etiqueta &lt;ol&gt; va definida dentro de &lt;li&gt; </li>
+						<li> <input type="checkbox" name="respuestas" id="respuestas6"> 
+							La etiqueta &lt;li&gt; va definida dentro de &lt;ul&gt; </li>
+
+						
+					
+					</ul>
+
+		</fieldset> </li>
+	</ol>
+	
+		<input class="botones" type="reset" value="Limpiar" id="reset"/>
+		<input class="botones" type="submit" value="Comprobar" id="submit"/>
+
+
+
+	
+	</form>
+
+
+</body>
+
+
+</html>

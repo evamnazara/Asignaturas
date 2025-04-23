@@ -1,0 +1,56 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="empresa">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="empregado" type="tipoEmpregado" maxOccurs="200"/>
+            <xs:element name="departamento" type="tipoDepartamento" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:keyref name="depUnico">
+        <xs:selector xpath="departamento"/>
+        <xs:field xpath="@codigo"/>
+    </xs:keyref>
+    
+    <xs:keyref name="departamento" refer="depUnico">
+        <xs:selector xpath="empregado"/>
+        <xs:field xpath="@nss"/>
+    </xs:keyref> 
+    
+    <xs:keyref name="jefeDpto" refer="jefeDpto">
+        <xs:selector xpath="departamento"/>
+        <xs:field xpath="@director"/>
+    </xs:keyref> 
+</xs:element>
+
+ <xs:complexType name="tipoEmpregado">
+    <xs:sequence>
+        <xs:element name="nome" type="xs:string"/>
+        <xs:element name="departamento" type="xs:string"/>
+        <xs:element name="nss" type="tipoNSS"/> 
+        <xs:element name="contactos" type="tipoContactos" nillable="true"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:simpleType name="tipoNSS">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{12}"/>
+        </xs:restriction>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="tipoContactos">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{9}\s)?(\d{9}\s)?(\d{9}\s)?(\d{9})?"/> 
+        </xs:restriction>
+ </xs:simpleType>
+
+ <xs:element name="TipoDepartamento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" type="xs:string"/>
+              <xs:element name="xefe"/>
+            </xs:sequence>
+            <xs:attribute name="codigo"/>
+          </xs:complexType>
+ </xs:element>
+</xs:schema>

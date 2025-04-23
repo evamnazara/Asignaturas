@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+  <xs:element name="tablaPeriodica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="atomo" type="atomoTipo" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="atomoTipo">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="simbolo" type="xs:string"/>
+      <xs:element name="numeroAtomico" type="xs:int"/>
+      <xs:element name="puntoEbullicion" type="puntoEbullicionTipo"/>
+      <xs:element name="densidad" type="densidadTipo"/>
+    </xs:sequence>
+    <xs:attribute name="estado" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- Definir el tipo de unidad para el punto de ebullición -->
+  <xs:simpleType name="unidadesTipo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="centigrados"/>
+      <xs:enumeration value="kelvin"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="densidadUnidadesTipo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="gramos"/>
+      <xs:enumeration value="centimetros cubicos"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="puntoEbullicionTipo">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:decimal"/>
+    </xs:sequence>
+    <xs:attribute name="unidades" type="unidadesTipo" default="centigrados"/>
+  </xs:complexType>
+
+  <xs:complexType name="densidadTipo">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:decimal"/>
+    </xs:sequence>
+    <xs:attribute name="unidades" type="densidadUnidadesTipo"/>
+  </xs:complexType>
+
+
+
+</xs:schema>

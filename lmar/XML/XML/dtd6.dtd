@@ -1,0 +1,25 @@
+<!ENTITY % libro "INCLUDE">
+<!ENTITY % revista "IGNORE">
+
+<! [ % libro ; 
+                <!ELEMENT material (libro*)>
+                <!ELEMENT libro (titulo,editorial,autor,ano) >
+                            <!ELEMENT titulo >
+                            <!ELEMENT editorial >
+                            <!ELEMENT autor >
+                            <!ELEMENT ano >
+                            
+<!ATTLIST libro 
+        ISBN CDATA #REQUIRED
+>
+] >
+
+
+<! [ % artigo;
+            <!ELEMENT material (artigo*)>
+            <!ELEMENT artigo (titulo,revista) >
+                  <!ELEMENT revista (nome, paxina) >
+                        <!ELEMENT nome) >
+                        <!ELEMENT paxina) >
+
+] >

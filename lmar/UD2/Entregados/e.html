@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Escuela de negocios - Cursos</title>
+    <style>
+      * {
+        font-family: Arial;
+        margin: 0;
+      }
+      body {
+        max-width: 850px;
+        margin: 0 auto;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        font-size: 1.2em;
+        font-weight: 800;
+      }
+      header {
+        padding-left: 20px;
+        padding-bottom: 25px;
+      }
+      header div {
+        display: flex;
+        align-items: center;
+      }
+      header div h2 {
+        font-size: 3.8em;
+        color: #80295f;
+      }
+      header div h3 {
+        margin-left: 40px;
+        background-color: #00a985;
+        padding: 10px;
+        color: white;
+      }
+      main {
+        background-color: #f5f5f5;
+        padding-bottom: 20px;
+      }
+      main h2 {
+        font-size: 1.7em;
+        padding: 10px 20px;
+        color: #1877b6;
+      }
+      main section {
+        display: flex;
+        justify-content: space-around;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 30px;
+      }
+      main section figure {
+        width: 240px;
+      }
+      main section figure img {
+        width: 80px;
+      }
+      footer {
+        background-color: white;
+      }
+      form {
+        background-color: #ebebeb;
+        max-width: 98%;
+        margin: 0 auto;
+        font-size: 0.9em;
+        padding: 20px 0;
+      }
+      fieldset {
+        border: none;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        list-style: none;
+        gap: 20px;
+      }
+      li input {
+        width: 90%;
+        border: 1px solid #d7d7d7;
+        border-radius: 5px;
+        height: 30px;
+        margin-top: 5px;
+      }
+      li select {
+        width: 90%;
+        border: 1px solid #d7d7d7;
+        border-radius: 5px;
+        height: 35px;
+        margin-top: 5px;
+      }
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .check label {
+        margin-top: 5px;
+      }
+      #info {
+        width: auto;
+      }
+      #enviar {
+        background-color: #00a297;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 32px;
+        margin-top: 5px;
+        width: 91%;
+      }
+      footer {
+        height: 420px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ESCUELA DE NEGOCIOS</h1>
+      <div>
+        <h2>CURSOS</h2>
+        <h3>PARA LOS QUE BUSCAN<br />ACTUALIZAR SUS CONOCIMIENTOS</h3>
+      </div>
+    </header>
+    <main>
+      <h2>ANÁLISIS DE ESTADOS<br />FINANCIEROS</h2>
+      <section>
+        <figure>
+          <img src="imagenes/imagen1_tarea4.png" />
+          <figcaption>
+            Conocer y aplicar indicadores financieros para la toma de decisiones
+            estratégicas.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/imagen2_tarea4.png" />
+          <figcaption>
+            Detectar cuáles son los puntos fuertes y débiles de una compañía.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/imagen3_tarea4.png" />
+          <figcaption>
+            Obtener herramientas para proyectar el comportamiento futuro de la
+            empresa.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer>
+      <form>
+        <fieldset>
+          <legend>Ingresa tus datos y te contactaremos a la brevedad.</legend>
+          <ul>
+            <li>
+              <label for="nombre">Nombre*</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                pattern="^([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)(\s([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)){0,}"
+                oninvalid="setCustomValidity('El formato del nombre no es correcto (p.e. Jose Juan)')"
+                oninput="setCustomValidity('')"
+              />
+            </li>
+            <li>
+              <label for="apellido">Apellidos*</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                required
+                pattern="^(([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)|(del?|las?|los?))+((\s([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+)|(\sdel?|\slas?|\slos?))+){0,}"
+                oninvalid="setCustomValidity('El formato del apellido no es correcto (p.e. de la Torre Sánchez)')"
+                oninput="setCustomValidity('')"
+              />
+            </li>
+            <li>
+              <label for="correo">Email(*)</label>
+              <input type="email" id="correo" name="correo" required />
+            </li>
+            <li>
+              <label for="tlf">Teléfonos*</label>
+              <input
+                type="tel"
+                id="tlf"
+                name="tlf"
+                required
+                pattern="(\d{9})|(\+\d{9})"
+                oninvalid="setCustomValidity('El formato de teléfono introducido no es válido (p.e. 123456789 o +123456789)')"
+                oninput="setCustomValidity('')"
+              />
+            </li>
+            <li>
+              <p>Sexo</p>
+              <select name="sexo">
+                <option value="h">Hombre</option>
+                <option value="m">Mujer</option>
+                <option value="o">Otro</option>
+                <option value="n">Prefiero no especificarlo</option>
+              </select>
+            </li>
+            <li>
+              <p>País de procedencia</p>
+              <select name="pais">
+                <option value="es">España</option>
+                <option value="po">Portugal</option>
+                <option value="fr">Francia</option>
+                <option value="it">Italia</option>
+              </select>
+            </li>
+            <li>
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" />
+            </li>
+            <li>
+              <label for="cargo">Cargo</label>
+              <input type="text" id="cargo" name="cargo" />
+            </li>
+            <li class="check">
+              <input type="checkbox" id="info" name="info" />
+              <label for="info"
+                >Quiero recibir información sobre otros programas</label
+              >
+            </li>
+            <li>
+              <input type="submit" value="Quiero más información" id="enviar" />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </footer>
+  </body>
+</html>

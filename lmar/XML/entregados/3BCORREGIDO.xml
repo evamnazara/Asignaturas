@@ -1,0 +1,26 @@
+<!-- 
+TAREFA 3B 
+<?xml version="1.1"?>
+--> 
+
+
+<biblioteca>
+	<libro isbn="6666777" titulo="Carrie" anoPublicacion="1961" editorial="debolsillo">
+		<autor> Stephen King </autor>
+		<descripcion xml:lang="en">  </descripcion> 
+
+	
+	</libro>
+	
+	<libro isbn="1111111" titulo="Memorias dun neno Labrego" anoPublicacion="1940" editorial="debolsillo">
+		<autor> Xosé Neira Vilas </autor>
+		<autor> 2º Autor </autor>
+		<descripcion xml:lang="es">  </descripcion> 
+		
+	</libro>
+		<libro isbn="22" titulo="ejemplo" anoPublicacion="1940" editorial="ejemplo">
+		<autor> </autor>
+		<descripcion> 
+		</descripcion> 
+	</libro>
+</biblioteca>

@@ -1,0 +1,33 @@
+body {
+  margin: 0 0 auto;
+}
+
+header {
+  width: 800px;
+  background-color: beige;
+  display: inline-block;
+}
+
+h1 {
+  font-variant: small-caps;
+  color: black;
+}
+h2 {
+  color: darkmagenta;
+}
+
+div.verde {
+  background-color: darkslategrey;
+  color: white;
+  padding: 1%;
+  font-variant: small-caps;
+  font-size: 25px;
+}
+
+div.contenedor {
+  display: flex;
+}
+
+div.contenedor2 {
+  display: flex;
+}

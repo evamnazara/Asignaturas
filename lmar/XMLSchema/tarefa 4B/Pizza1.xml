@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pizza>
+  <tamaño>mediano</tamaño>
+  <tipo>cuatro quesos</tipo>
+  <extra_mozzarela>Yes</extra_mozzarela>
+  <jamón>Yes</jamón>
+  <nombre>Eva</nombre>
+  <apellidos>Otero Názara</apellidos>
+  <teléfono>666555444</teléfono>
+  <enviar>SI</enviar>
+  <dirección>Calle 1</dirección>
+  <precio>15.50</precio>
+</pizza>

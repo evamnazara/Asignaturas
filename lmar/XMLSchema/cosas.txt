@@ -1,0 +1,14 @@
+claves siempre en el elemento raíz
+minoccurs por defecto es minimo y maximo 1
+    si se ponen maximos, tambien hay que poner minimos
+
+cuando es simple y cuando no 
+
+sequence: si estan todos en el mismo orden, aunque no esten todos
+    all: traga todo
+¿cuando es choice?
+
+comentario: 
+    xs:annotation > documentation 
+
+union??

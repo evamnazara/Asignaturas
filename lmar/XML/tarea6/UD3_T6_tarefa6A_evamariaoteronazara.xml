@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reservas [
+
+  <!ELEMENT reservas (reserva*,cliente*)>
+  <!ELEMENT reserva (data_inicio, data_fin)>
+          <!ELEMENT data_fin (#PCDATA)>
+
+<!ELEMENT data_inicio (observacions?)>
+
+  
+  <!ELEMENT cliente (nome,apelidos,mobil,correo)>
+        <!ELEMENT nome (#PCDATA)>
+        <!ELEMENT apelidos (#PCDATA)>
+        <!ELEMENT mobil (#PCDATA)>
+        <!ELEMENT correo (#PCDATA)>
+
+  <!ATTLIST reserva 
+                cliente IDREF                               #REQUIRED
+                tipo (SA | AD | MP | TI | PC)       #REQUIRED
+                habitacion (dobre | individual) #IMPLIED
+>
+<!ENTITY %fecha
+  "ano  CDATA  #REQUIRED
+  mes ( xaneiro | febreiro | marzo | abril | maio | xunio | xulio | agosto | setembro | outubro | novembro | decembro)
+  dia CDATA #REQUIRED" >
+
+  
+  <!ATTLIST data_inicio %fecha >
+  <!ATTLIST data_fin %fecha  >
+                
+    <!ATTLIST cliente 
+                id ID #REQUIRED
+                >
+]>
+<!-- Todos os atributos son requeridos.
+O atributo habitación pode tomar os valores: Dobre ou Individual.
+O atributo tipo pode tomar os valores: SA, AD, MP, TI ou PC.
+O atributo mes unicamente pode tomar como valor os nomes dos meses do ano.
+Debes empregar entidades onde che pareza convinte-->
+
+<reservas>
+    <reserva cliente="CLI1" tipo="AD">
+        <data_inicio ano="2013" mes="febreiro" día="5">
+            <observacións>Chegan sobre as 23:30</observacións>
+        </data_inicio>
+        <data_fin ano="2013" mes="febreiro" día="9" />
+    </reserva>
+    <reserva cliente="CLI2" tipo="MP">
+        <data_inicio ano="2013" mes="febreiro" día="7" />
+        <data_fin ano="2013" mes="febreiro" día="15">
+            <observacións>Saída as 16:00</observacións>
+        </data_fin>
+    </reserva>    
+    <reserva cliente="CLI1" tipo="TI">
+        <data_inicio ano="2013" mes="febreiro" día="18" />
+        <data_fin ano="2013" mes="febreiro" día="23" />
+    </reserva>    
+    <cliente id="CLI1">
+        <nome>Eva</nome>
+        <apelidos>Sobral García</apelidos>
+        <mobil>688998899</mobil>
+        <correo>eva.sobral@meucorreo.com</correo>
+    </cliente>
+    <cliente id="CLI2">
+        <nome>Xan</nome>
+        <apelidos>López Paz</apelidos>
+        <mobil>677778899</mobil>
+    </cliente>
+</reserva>
+
+</reservas>

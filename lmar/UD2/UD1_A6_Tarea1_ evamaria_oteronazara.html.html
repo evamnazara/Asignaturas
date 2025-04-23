@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+		<title> Formulario 1 - Eva </title>
+		
+		<style>
+			body {
+				background-color: #cedfef;
+				font-family: Verdana;
+				font-size: 11px;
+
+			}
+			
+			main {
+				margin: 0 auto; 
+				width: 800px;
+				background-color: SteelBlue;
+			}
+			
+			form {
+				padding: 20px;
+				border: 1px solid LightSteelBlue;
+			}
+			
+			fieldset {
+				color: white;
+				margin-bottom: 15px;
+			}
+			
+			h1 {
+				text-align: center;
+				font-size: 30px;
+
+			}
+		
+		</style>
+		
+</head>
+
+<body>
+	<header>
+		<h1> Formulario de contacto  </h1>
+	</header>
+	
+	<main>
+		<form>
+			<fieldset>
+				<legend> Datos personales: </legend>
+				
+				<p> apellido: <input type="text" name="apellido" id="apellido" required="true"/> </p>
+				<p> nombre: <input type="text" name="nombre" id="nombre"  required="true"/> </p>
+				<p> edad: <input type="number" name="edad" id="edad" min="0" max="99"/>  </p>
+				<p> teléfono: <input type="tel" name="tel" id="tel"/> </p>
+				<p> e-mail: <input type="email" name="email" id="email"/> </p>
+			</fieldset>
+		
+			<fieldset>
+				<label for="productos"> Productos que te interesan: </label>
+				<br>
+				<select name="productos" size="9">
+					<optgroup label="Raquetas">
+						<option value="padel"> Pádel </option>
+						<option value="tenis"> Tenis </option>
+						<option value="badminton"> Badminton </option>
+						<option value="tenismesa"> Ténis de mesa </option>
+					</optgroup>
+
+					<optgroup label="Raquetero">
+						<option value="padel"> Pádel </option>
+						<option value="tenis"> Tenis </option>
+						<option value="badminton"> Badminton </option>
+					</optgroup>
+				</select>
+				<br> 
+				
+				<input type="checkbox" name="deporte" id="deporte"> Practico deporte habitualmente. <br>
+				<input type="checkbox" name="fumar" id="fumar"> Fumo.
+
+			</fieldset>
+			
+			<fieldset>
+				<label for="contacto"> ¿Quieres que contactemos contigo? ¿Cómo? </label>
+				<br> 
+				
+				<input type="radio" name="contacto" id="contacto_1" value="tlf" />
+				 	<label for="contacto_1"> Sí, por teléfono. </label>
+
+				<input type="radio" name="contacto" id="contacto_2" value="mail" />
+				  <label for="contacto_2"> Sí, por e-mail. </label>
+				
+				<input type="radio" name="contacto" id="contacto_3" value="no" />
+ 				 	<label for="contacto_1"> No. </label>
+
+
+			</fieldset>
+			
+			<fieldset>
+			
+				<input type="reset" value="Limpiar" id ="reset"/> 
+				<input type="submit" value="Enviar" id="enviar" /> 
+
+			</fieldset>
+		
+		</form>
+	</main>
+</body>
+
+</html>

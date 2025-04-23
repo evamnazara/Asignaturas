@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pizza>
+  <tamaño>Grande</tamaño>
+  <tipo>Carne</tipo>
+  <atún>Si</atún>
+  <nombre>Eva</nombre>
+  <apellidos>Otero</apellidos>
+  <enviar>SI</enviar>
+  <precio>13.20</precio>
+</pizza>

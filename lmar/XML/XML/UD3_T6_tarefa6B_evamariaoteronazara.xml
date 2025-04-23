@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+Os espazos nos que se atopan os ordenadores:  "nome", "tipo" (aula, sala, departamento), e "ubicación".
+Ademáis dentro do DTD teremos que empregar referencias para:
+Indicar o fabricante de cada ordenador
+Indicar os ordenadores que temos en cada espazo.
+Crea un documento XML que valide coa DTD que acabas de modificar.-->
+
+      <!-- --> 
+      <!-- --> 
+      <!-- --> 
+      <!-- --> 
+<!ELEMENT Hardware (Maquina*)>
+<!ELEMENT Maquina (Info, Config, Notas?)>
+<!ELEMENT Info (Tipo, Fabricante?, Procesador?, Memoria?, Disco*,
+                      (Lectora | Gravadora)?)>
+<!ELEMENT Tipo (#PCDATA)>
+<!ELEMENT Fabricante (#PCDATA)>
+<!ELEMENT Procesador (#PCDATA)>
+<!ELEMENT Memoria (#PCDATA)>
+<!ELEMENT Disco EMPTY>
+<!ELEMENT Lectora (#PCDATA)>
+<!ELEMENT Gravadora (#PCDATA)>
+<!ELEMENT Config (Role*, OS?, IP*, Gateway?)>
+<!ELEMENT Role (#PCDATA)>
+<!ELEMENT OS (#PCDATA)>
+<!ELEMENT IP (#PCDATA)>
+<!ELEMENT Gateway (#PCDATA)>
+<!ELEMENT Notas (#PCDATA)>
+
+<!ENTITY % Unidade_optica
+      "Tipo (CD | DVD | BD) #REQUIRED
+       Velocidade CDATA #IMPLIED">
+<!ATTLIST Maquina
+      Nome ID #REQUIRED
+      >
+<!-- Os fabricantes de ordenadores: "nome", páxina "Web" e enderezo de "correo" electrónico. -->
+      <!ATTLIST fabricante
+      nome CDATA #REQUIRED
+      web  CDATA #REQUIRED
+      correo  CDATA #REQUIRED
+      > 
+<!ATTLIST Procesador
+   Marca (Intel | AMD) #REQUIRED
+      NumNucleos CDATA "1"
+      Velocidade CDATA #IMPLIED>
+<!ATTLIST Disco
+      Tecnoloxía (ATA | SATA | SCSI | SSD) #IMPLIED
+      Capacidade CDATA #REQUIRED>
+<!ATTLIST Memoria
+      Tecnoloxía (DDR | DDR2 | DDR3) #IMPLIED>
+      
+<!ATTLIST Lectora %Unidade_optica; >
+
+<!ATTLIST Gravadora %Unidade_optica; >

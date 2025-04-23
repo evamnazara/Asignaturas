@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE material  SYSTEM "dtd6.dtd">
+
+ <material>
+  <artigo>
+    <titulo>O carballo</titulo>
+    <revista numero="32">
+        <nome>Natureza verde</nome>
+       <paxina>4</paxina>
+    </revista>
+  </artigo>
+</material>

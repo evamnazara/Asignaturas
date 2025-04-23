@@ -1,0 +1,76 @@
+APUNTES U2.
+
+vb: sis-w11-EON
+user: weoternaza
+nmaq: Weq-le14-17
+
+nomenclatura máquinas: SIS-W11-01 // SIS-W2K6-02
+user: USER-EON 
+
+=================================
+
+proxy: dar o no salida // registros de acceso
+
+permisos en gris: están heredados
+
+usuarios: administración de equipos > usarios y grupos locales 
+
+
+
+LINUX: 
+
+tamaño swap : 
+        si < 4 GB, tamaño memoria ram x2 
+        si > 4 GB, tamaño memoria ram
+
+.bashrc está en /user
+wget www.google.es
+
+
+REDES:
+
+        - tabla osi/tcp 
+
+tipo a 2 8 redes  // 2 24 hosts // 255.0.0.0
+tipo b 2 16 redes // 2 16 hosts // 255.255.0.0
+tipo c 2 14 redes // 2 8 hosts // 255.255.255.0
+
+
+mascara / hosts
+
+
+
+tarea 8 
+
+1. osi capas
+2. pila protocolos tcp/ip y correspondencia osi
+        aplicacion  / tcp / ip / enlace / fisica 
+
+3. ips reservadas abc
+        10.x.x.x / 8
+        172.16.x.x / 16 -- 172.31.x.x / 16
+        192.168.x.x / 24  
+
+
+4. gateway 172.16.0.1
+
+TAREA 9 
+
+herencia en windows 
+        copiar permisos a archivos o directorios que estén dentro de un directorio padre. /?
+        permisos avanzados > deshabilitar herencia. 
+
+RAID
+        por herdware: tienen que ser la misma capacidad
+        por software: el más pequeño 
+
+RAID                                            DISCOS         REDUNDANCIA                             rendimiento             capacidad 
+      RAID   0          STRIPPING                               ninguna                                 +L +E                   num discos
+      RAID   1          MIRRORING / ESPEJO                      1 - acepta perdida de un disco          +L                      1 disco(si no son iguales)
+      RAID   5 -                                3 o mas         1                                       +L                      num discos - 1
+      RAID   6                                  4 o mas         2                                       +l +e                   num discos - 2
+      RAID   10                                 4,6,8..         1 o 2 // 1,5 +-                         +l +e                   num discos /2
+      RAID   50                                 6,8,9,10..      1 o 2 // 1,5 +-                         +<3!                    num discos - 2
+      RAID   60                                                 2 o 3 o 4 // 1,5 +-                     +
+      E      ?          disco en espera                  
+      JBOD              se reparte como si fuese un solo disco  rip                                     rip                     2+                                               

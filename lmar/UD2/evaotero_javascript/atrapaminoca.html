@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>¡Atrápame!</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  </head>
+  <body>
+    <div id="contenedor2">
+      <h1 class="juego">¡atrapa a miñoca!</h1>
+      <h2 class="juego">haz click sobre ella 10 veces</h2>
+
+      <p id="contador">clicks: 0 | tiempo: 0s</p>
+    </div>
+    <img id="minoca" src="img/minoca.png" />
+
+    <script>
+      const gatito = document.getElementById("minoca");
+      const contadorTexto = document.getElementById("contador");
+      let velocidad = 1000;
+      let clicks = 0;
+      let tiempoInicio = null;
+
+      function moverGatito() {
+        const maxX = window.innerWidth - 100;
+        const maxY = window.innerHeight - 100;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        gatito.style.left = `${randomX}px`;
+        gatito.style.top = `${randomY}px`;
+      }
+
+      gatito.addEventListener("click", () => {
+        if (clicks === 0) {
+          tiempoInicio = Date.now();
+        }
+        clicks++;
+        velocidad = Math.max(200, velocidad * 0.9);
+        moverGatito();
+
+        let tiempoTranscurrido = ((Date.now() - tiempoInicio) / 1000).toFixed(
+          1
+        );
+        contadorTexto.textContent = `Clicks: ${clicks} | Tiempo: ${tiempoTranscurrido}s`;
+
+        if (clicks >= 10) {
+          const url = `victoria.html?tiempo=${tiempoTranscurrido}`;
+          window.location.href = url;
+        }
+      });
+
+      moverGatito();
+    </script>
+  </body>
+</html>

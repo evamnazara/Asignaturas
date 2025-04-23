@@ -1,0 +1,12 @@
+10/03/2025 > clase 1 > apuntes 
+
+=====
+
+12/02/2025 > notas deberes
+
+si se usa una función, no se pude poner *, se ponen todos los atributos por separado (29 p.ej)
+
+    cuando se usa el distinct :'| 
+    cuando se usa cast / cast-convert (25)
+
+=====

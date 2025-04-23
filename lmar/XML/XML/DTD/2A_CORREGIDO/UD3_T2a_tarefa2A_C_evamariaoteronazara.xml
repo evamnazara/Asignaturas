@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ciclo [
+  <!ELEMENT ciclo (codigo*)>
+  <!ELEMENT codigo (#PCDATA)>
+]>
+
+<ciclo>
+    <codigo>CSIFC01 </codigo>
+    <codigo>CSIFC02 </codigo>
+    <codigo>CSIFC03 </codigo>
+</ciclo>

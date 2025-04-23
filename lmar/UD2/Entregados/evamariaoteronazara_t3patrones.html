@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>T3 - Patrones</title>
+
+    <style>
+      h1 {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        border: 1px solid #819896;
+        gap: 15px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input {
+        padding: 8px;
+        border: 1px solid #8b8b8b;
+      }
+      button {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tarea 3 - Formulario con expresiones regulares.</h1>
+    <form>
+      <!-- Nombres de personas con la primera letra en mayúsculas y las siguientes en minúsculas. 
+       Debe permitir nombres compuestos como María Antonia. -->
+      <!-- las tildes no funcionan en safari -->
+
+      <label for="nombre">Nombre completo:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Ejemplo: María Antonia"
+        pattern="^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)(\s[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)*$"
+        title="Permite nombres compuestos, deben comenzar con mayúscula y seguir con minúsculas."
+        required
+      />
+
+      <!-- Una contraseña que debe tener como mínimo 6 caracteres (que podrán ser letra minúscula, números o un guión). -->
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="mínimo 6 caracteres (letras miúsculas, números o un guión)"
+        pattern="^[a-z0-9-]{6,}$"
+        title="Debe tener como mínimo 6 caracteres (que podrán ser letra minúscula, números o un guión)."
+        required
+      />
+
+      <!-- Un código de ciclo, teniendo en cuenta que, tiene 7 caracteres, 
+       de los cuales, el primero siempre es C, el segundo puede ser S ó M 
+       los tres siguientes son letras y los dos últimos números. -->
+
+      <label for="codigo_ciclo">Código de Ciclo:</label>
+      <input
+        type="text"
+        id="codigo_ciclo"
+        name="codigo_ciclo"
+        placeholder="Ejemplo: CSAAA11 / CMAAA22"
+        pattern="^C[SM][A-Z]{3}\d{2}$"
+        title="Debe comenzar con 'C', seguir con 'S' o 'M', luego 3 letras mayúsculas y terminar con 2 dígitos."
+        required
+      />
+
+      <!-- Matrículas actuales españolas. -->
+      <label for="matricula">Matrícula Española:</label>
+      <input
+        type="text"
+        id="matricula"
+        name="matricula"
+        placeholder="Matrícula: 1111AAA"
+        pattern="^\d{4}[BCDFGHJKLMNPRSTVWXYZ]{3}$"
+        title="Debe tener 4 dígitos seguidos de 3 letras en mayúsculas (sin vocales ni Ñ)."
+        required
+      />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

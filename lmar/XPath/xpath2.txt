@@ -1,0 +1,11 @@
+a.) Os nomes das máquinas.
+	/child::equipos/child::maquina/attribute::nome
+
+b.) Os nomes das máquinas que teñan gravadora óptica. (se coge el nombre de la máquina)
+
+	/equipos/máquina/hardware/gravadora//ancestor::máquina
+	/equipos/máquina/hardware/gravadora//ancestor-or-self::máquina (redundante)
+
+
+c.) O sistema operativo das máquinas nas que figure o "role".
+	/equipos/máquina/config/role//parent::config/OS

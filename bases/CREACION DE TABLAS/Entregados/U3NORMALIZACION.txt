@@ -1,0 +1,62 @@
+UNIDAD 3: NORMALIZACION
+
+X --------> Y
+
+X determina Y 
+Y depende fundamentalmente de X 
+
+========================================
+DEPENDENCIAS:
+
+dependencia total 
+    si hay una relacion A B C D con clave A B 
+    A B determinan C y D
+
+dependencia parcial 
+    si C depende de B -> PARCIAL
+
+    C tiene dependencia PARCIAL, pero D seguiría teniendo dependencia total
+
+
+dependencia transitiva 
+    A B C D E -> clave A
+
+    A determina B, C, D, E
+
+    pero D determina a E 
+    E tiene dependencia transitiva, porque D también obtiene su valor a traves de A  
+
+    libro: *codLibro*, titulo, IDEditorial, nombreEditorial, telefonoEditorial
+            codLibro determina el titulo (<- TOTAL), IDEditorial, nombreEditorial y telefonoEditorial (<- TRANSITIVA)
+
+======================================
+ATRIBUTOS:
+
+    atributos primos: atributos que pertenecen a claves candidatas, primarias y candidatas. NO FORÁNEAS
+
+    atributos no primos: los que no pertenecen a ninguna clave candidata
+_____
+
+    atributos atómicos: cada atributo solo puede tener UN valor
+
+=====================================
+PASOS PARA CADA TABLA:  
+
+1. OBTENER DEPENDENCIAS FUNCIONALES
+2. ESTABLECER CLAVES CANDIDATAS 
+3. SEÑALAR ATRIBUTOS PRIMOS
+
+
+4. 1FN - cada atributo tiene que ser atomico -> EJEMPLO APUNTES
+5. 2FN - todos los tributos no primos tienen que tener dependencia completa 
+6. 3FN - no puede haber dependencia funcional entre atributos NO primos (no dependencias transitivas)
+
+
+FNBC: -> sus!! cuando hay 2 claves y hay en el medio claves alternativas
+
+
+toda dependencia funcional tiene que ser parte de la clave. 
+      X       →          Y 
+determinante		implicante
+
+

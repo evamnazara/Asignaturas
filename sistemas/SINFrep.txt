@@ -1,0 +1,113 @@
+
+pga agujeros pines
+lga pestañas
+
+DEFINICIONES: 
+Particionar
+    Dividir LOXICAMENTE un disco
+
+Formatear
+    Aplicar un sistema de arquivos (FS) a unha partición
+
+Sistemas de arquivos (FS)
+    Estrutura de datos para almacenar e ler dunha partición
+
+Gestor de arranque:
+    Programa que permite arrancar desde diferentes particiones o volumenes.
+
+ROM
+    Memoria de solo lectura
+
+PROM
+    Memoria de solo lectura programable
+
+EPROM
+    Memoria de solo lectura programable que se puede borrar
+
+EEPROM
+    Memoria de solo lectura programable que se puede borrar electricamente
+
+SO-DIMM
+    Encapsulado de memoria más pequeño que el DIMM, suele estar en portátiles.
+
+LGA
+    Hace referencia a un tipo de socket de CPU, tiene pestañas para las conexines.
+L2
+    Tipo de memoria caché.
+
+x86
+    famila de instrucciones intel de 32 bits
+
+DRAM
+    Memoria dinámica de acceso aleatorio
+
+DDR
+    Memoria que envía 2 datos por ciclo
+
+====================================
+
+SISTEMAS DE ARCHIVOS:
+incluír Tamaño máximo de partición, tamaño máximo de arquivo, se dispón de algún tipo de seguridade, 
+que S.O. poden ler ou escribir neles e que S.O. se pode instalar neles.
+FAT32
+    T.M.P.: 8 TiB
+    T.M.A.: 4 GiB
+    Ler: Todos
+    Instalar: windows 98 se
+    Seguridad: Ninguna
+
+exFAT
+    T.M.P.: 64 ,128 PiB
+    T.M.A.:16 EiB
+    Ler: Todos
+    Instalar: Ninguno
+    Seguridad: Ninguna
+    
+NTFS
+    T.M.P.: 8 PiB
+    T.M.A.: 8 PiB
+    Ler: Windows, Linux, MacOs, ...
+    Instalar: Windows
+    Seguridad: Si, con ACL
+EXT4
+    T.M.P.: 1 EiB
+    T.M.A.: 16 TiB
+    Ler: Linux, MacOS
+    Instalar: Linux
+    Seguridad: Si, ACLIES 
+APF
+    T.M.P.: 8 EiB
+    T.M.A.: 8 EiB
+    Ler: MacOS, Linux
+    Instalar: MacOS
+    Seguridad: Si, ACL
+
+PC2-8500 funcionando en dual channel
+    Bus: 128 bits
+    Nombre_Alternativo: DDR2-1066
+    Vel. De transferencia: 17000 MB/s
+    Frecuencia: 1066 Mhz
+
+DDR-400
+    Bus:  64 bits
+    Nombre_Alternativo: PC-3200
+    Vel. De transferencia:  3200 MB/s
+    Frecuencia: 400 Mhz
+
+DDR3-2200 funcionando en dual channel
+    Bus:  128 bits
+    Nombre_Alternativo: PC3-17600
+    Vel. De transferencia:  35200 MB/s
+    Frecuencia: 2200 Mhz
+
+PC4-25600
+    Bus:  64 bits
+    Nombre_Alternativo: DDR4-3200
+    Vel. De transferencia:  25600 MB/s
+    Frecuencia: 3200 Mhz
+
+================================= 
+
+
+
+

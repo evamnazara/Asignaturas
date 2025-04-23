@@ -1,0 +1,162 @@
+<!DOCTYPE! html>
+
+
+<html lang="es">
+
+<head> 
+	<meta charset="UTF-8">
+	<style> 
+		/* Cada bloque en una línea.
+		Aparece una línea separando los elementos de menú. */
+		
+		@media only screen and (max-width:480px) {}
+			
+		/*	Los libros se ven a dos columnas.
+		Disminuye al 90% el tamaño de la letra del menú. */
+		
+		@media only screen and (min-width:481px) and (max-width:768px) {}
+		
+			
+						
+		
+			
+	
+		body {
+			font-family: Georgia, Times New Roman, Sans-Serif;
+			font-size: 16px;
+			color: #333;
+			background-color: #778899;
+			text-align: justify;
+			display: flex;
+			flex-direction: column;
+			}
+		
+		header {
+			background-color: #FAEBD7;
+			}
+			
+		img {
+			height: 25px;
+			width: 25px;
+			float: right;
+		
+		}
+		
+		/*FALTA SOMBRA */
+		h2 {
+			color: #A0A0A0;
+			text-shadow: 2px 2px 3px #000;
+			}
+		
+		nav {
+			padding: 2%;
+			background-color: #323232 ;
+			justify-content: space-between;
+			}
+		nav a {
+			color: white;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #D2D3D4;
+			text-shadow: 2px 2px 3px #000;
+		}
+		
+		/*FALTA CENTRAR */
+		
+		main {
+			background-color: #FFFFE0;
+			width: 950px;
+			
+			
+			}
+		
+		footer {
+			font-size: 12px;
+			font-style: italic;
+			color: #efefef;
+		}
+	</style> 
+</head>
+
+
+<body> 
+
+	<header> 
+	<h1> Mario Benedetti </h1>
+	<img src="Benedetti.jpg">
+	
+	</header> 
+
+
+	<nav> 
+		<a href="#quien"> Quién es </a>
+		<a href="#libros"> Libros </a>
+		<a href="#frases"> Frases </a>
+	</nav>
+	
+	<main> 
+		<section id="quien">
+		<p> 
+		Mario Benedetti, excelente escritor, novelista y periodista que centró su carrera en la literatura y se convirtió en
+		el personaje más importante para su país Uruguay, con una gran producción literaria, en la segunda mitad del siglo XX. 
+		</p>
+
+		<p>Desarrolló varias facetas y se convirtió en un personaje de gran relevancia, que realizo trabajos como novelista,
+			dramaturgo, cuentista, critico, periodista y el más fundamental, un excelente escritor.</p>
+		</section>
+	
+	
+		<h2 id="libros"> Libros </h2>
+		
+		<section> 
+	
+			<h3> La Tregua </h3> 
+			<p>
+				Este libro refleja el espíritu romántico y filosófico del autor. Está escrita como si fuera el diario 
+			   del protagonista, Martín Santomé, y retrata la vida de un empleado a punto jubilarse, viudo, en el Montevideo 
+			   de finales de los 50. 
+			</p>
+		</section>
+		
+		<section> 
+			<h3> Vivir adrede </h3>
+			
+			Todo es adrede, todo hace trizas el alma. ¿Nos traicionan nuestras propias huellas? ¿Qué diferencia hay 
+			   entre un suicida inevitable y uno vocacional? A través de planteamientos como éstos, Vivir adrede reflexiona
+			   sobre la vida.
+			   
+		</section>
+		<section> 
+			<h3> Gracias por el fuego </h3>
+		Pieza fundamental de la narrativa de Mario Benedetti, GRACIAS POR EL FUEGO novela una historia de frustraciones:
+  		   la frustración de un asesinato y una frustración personal que es a la vez reflejo de la frustración general 
+		   en que se mueve un país. 
+		</section>
+		
+		<section> 		   
+			<h3> El amor, las mujeres y la vida </h3>
+			Este libro reúne los mejores poemas de amor de Mario Benedetti. Muchos de ellos están a flor de labio en la gente, 
+		   que los recuerda de memoria o los tiene en mente a la hora de garabetear un verso; otros se han convertido en canciones 
+		   y hasta en graffittis.
+
+			</section>
+	
+
+	
+	<h2 id="frases"> Frases </h2>
+
+	<ol> 
+		 <li> Cuando creíamos que teníamos todas las respuestas, de pronto, cambiaron todas las preguntas  </li> 
+		 <li> La mariposa recordará por siempre que fue gusano. </li> 
+		 <li> Después de todo, la muerte es solo un síntoma de que hubo vida. </li> 
+		 <li> Hay pocas cosas tan ensordecedoras como el silencio. </li> 
+		 <li>  La incertidumbre es una margarita cuyos pétalos no se terminan jamás de deshojar. </li> 
+	</ol> 
+
+</main>	
+</body>
+
+</html>
+
+

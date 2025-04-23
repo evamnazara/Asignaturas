@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="supermercado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="articulo" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" type="xs:string"/>
+              <xs:element name="marca" type="xs:string" minOccurs="0"/>
+              <xs:element name="medida" type="xs:string"/>
+              <xs:element name="seccion" type="xs:string"/>
+              <xs:element name="oferta" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="perecedero" minOccurs="0">
+                <xs:complexType>
+                  <xs:choice>
+                    <xs:element name="fabricacion" type="xs:string"/>
+                    <xs:element name="caducidad" type="xs:string"/>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="musica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cd" type="tipocd" maxOccurs="unbounded"/>
+                <xs:element name="musico" type="tipoMusico" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipocd">
+        <xs:sequence/>
+        <xs:attribute name="titulo" type="xs:string" use="required"/>
+        <xs:attribute name="ano" type="tipoAno" use="optional"/>
+        <xs:attribute name="interprete" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoMusico">
+        <xs:sequence>
+            <xs:element name="nomeArtistico" type="xs:string"/>
+            <xs:element name="tipo" type="tipoMusico" minOccurs="0"/>
+            <xs:element name="instrumento" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="tipoCodMusico" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoMusico">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cantautor"/>
+            <xs:enumeration value="duo"/>
+            <xs:enumeration value="solista"/>
+            <xs:enumeration value="grupo"/>
+            <xs:enumeration value="banda"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- restricciones -->
+    <xs:simpleType name="tipoAno">
+        <xs:restriction base="xs:string">
+           
+            <xs:pattern value="19\d{2}|20\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodMusico">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{2}[A-Za-z0-9]{1}[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EVA - Tarea 4 - Formularios</title>
+    <style>
+      body {
+        font-family: Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      form {
+        width: 350px;
+        color: white;
+        background-color: SlateGray;
+        border: 3px solid LightSteelBlue;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      form fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+      }
+      form fieldset legend {
+        margin-bottom: 20px;
+      }
+
+      form fieldset div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-left: 25px;
+      }
+
+      form label {
+        flex: 1 1 35%;
+      }
+
+      form input,
+      form select {
+        flex: 1 1 60%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      form input:required {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulario">
+      <fieldset>
+        <legend>Datos personales</legend>
+        <div>
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre completo"
+            pattern="([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)(\s[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)"
+            oninvalid="setCustomValidity('El formato de nombre es incorrecto. (p. ejemplo: Eva María Otero Názara)')"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="correo@dominio.com"
+            required
+            oninvalid="setCustomValidity('El formato de email es incorrecto. (p. ejemplo: correo@dominio.com)')"
+          />
+        </div>
+        <div>
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="P.e. +444323244"
+            pattern="\+\d{2}\d{9}"
+            oninvalid="setCustomValidity('El formato de teléfono es incorrecto. (p. ejemplo: +34666555444)')"
+          />
+        </div>
+        <div>
+          <label for="pais">País</label>
+          <input type="text" id="pais" name="pais" />
+        </div>
+        <div>
+          <label for="edad">Edad</label>
+          <input
+            type="number"
+            id="edad"
+            name="edad"
+            min="18"
+            max="100"
+            value="18"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Datos de tarjeta de crédito</legend>
+        <div>
+          <label for="numerotarjeta">Número</label>
+          <input
+            type="text"
+            id="numerotarjeta"
+            name="numerotarjeta"
+            pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}"
+            oninvalid="setCustomValidity('El formato de numero de tarjeta es incorrecto. (p. ejemplo: 8888 7777 6666 5555)')"
+            required
+          />
+        </div>
+        <div>
+          <label for="nomtarjeta">Nombre</label>
+          <input
+            type="text"
+            id="nomtarjeta"
+            name="nomtarjeta"
+            placeholder="Nombre del propietario"
+            pattern="([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)(\s[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)"
+            required
+            oninvalid="setCustomValidity('El formato de nombre es incorrecto. (p. ejemplo: Eva María Otero Názara)')"
+          />
+        </div>
+      </fieldset>
+
+      <button type="submit">Realizar compra</button>
+    </form>
+  </body>
+</html>

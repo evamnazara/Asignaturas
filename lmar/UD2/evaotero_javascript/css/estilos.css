@@ -1,0 +1,170 @@
+/* común */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f0e1;
+  text-align: center;
+  font-family: Sans-serif;
+}
+
+/* página inicio */
+
+#contenedor1 {
+  border: 4px solid #4e351e;
+  background-color: #d2c4ae;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+h1.inicio {
+  margin-bottom: 20px;
+  color: #4e351e;
+  font-size: 24px;
+}
+
+p.inicio {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #594e47;
+}
+
+#inicio {
+  width: 300px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+a.inicio {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #6cc15dc4;
+  color: #3f3b36;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+a:hover.inicio {
+  background-color: #163d1b;
+  color: #e1c8a0;
+  transform: scale(1.05);
+}
+
+/* página juego */
+
+#contenedor2 {
+  justify-content: center;
+  border: 2px solid #5e3829;
+  background-color: #cabfb761;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  margin-top: 150px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+h1.juego {
+  font-family: Impact;
+  font-variant: small-caps;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #4a7362;
+}
+h2.juego {
+  color: #163d1b;
+  font-style: italic;
+}
+
+#contador {
+  font-size: 18px;
+  font-variant: small-caps;
+  margin-bottom: 10px;
+  color: rgb(6, 90, 93);
+}
+
+#minoca {
+  position: absolute;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+/* victoria */
+
+body.ganador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f0e1;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+#centro {
+  display: flex;
+  align-items: center;
+  border: 4px solid #4e351e;
+  background-color: #dec9b3;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  text-align: left;
+}
+
+#minoca2 {
+  width: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.contenido2 {
+  flex: 1;
+  align-content: center;
+  text-align: center;
+}
+
+h1.ganador {
+  font-variant: small-caps;
+  margin-bottom: 20px;
+  color: #4e351e;
+  font-size: 50px;
+}
+
+p.ganador {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #513422;
+}
+
+a.ganador {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #546745;
+  color: #f7f6e3;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+a.ganador:hover {
+  background-color: #4e351e;
+  color: #e1c8a0;
+  transform: scale(1.05);
+}

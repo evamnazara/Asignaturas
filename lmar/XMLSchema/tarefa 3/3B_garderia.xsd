@@ -1,0 +1,95 @@
+﻿
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+   <xs:element name="garderia">
+      <xs:complexType>
+          <xs:sequence>
+                <xs:element name="neno" minOccurs="1" maxOccurs="50" type="tipoNeno"/>
+          </xs:sequence>
+          
+   </xs:complexType>
+   
+   </xs:element>
+      <xs:complexType name="tipoNeno">
+    <xs:sequence>
+            <xs:element name="nome" type="tiponome"/>
+            <xs:element name="dataNacemento" type="date"/>
+            <xs:element name="peso" type="peso"/>
+            <xs:element name="altura" type="xs:unsignedByte"/>
+            <xs:element name="vacunas" type="xs:boolean"/>
+            <xs:element name="contacto" minOccurs="1" maxOccurs="4" type="tipocontacto"/>
+            <xs:element name="idade" type="idade"/>
+    </xs:sequence>
+            <xs:attribute name="numeroExpedente" type="xs:unsignedShort"/>
+            <xs:attribute name="sexo" type="sexo"/>
+            <xs:attribute name="codigoNeno" type="codigoNeno"/>
+    </xs:complexType>
+   
+   <xs:simpleType name="sexo">
+       <xs:restriction base="xs:string">
+           <xs:enumeration value="H"/>  
+            <xs:enumeration value="M"/>  
+       </xs:restriction> 
+   </xs:simpleType>
+   
+
+    <xs:simpleType name="tiponome">
+        <xs:restriction base="xs:string">
+            <xs:minInclusive value="3"/>
+            <xs:maxInclusive value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+   
+    <xs:simpleType name="peso">
+       <xs:restriction base="xs:string">
+           <xs:fractionDigits value="1"/>
+       </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigoNeno">
+       <xs:restriction base="xs:string">
+           <xs:pattern value="(P|M)[3-7]{2}(-\d{3})?"/>
+       </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipocontacto">
+        <xs:simpleContent> 
+            <xs:extension base="tipotelefono">
+                <xs:attribute name="relacion" type="relacion"/>
+            </xs:extension>
+        </xs:simpleContent>
+        
+    </xs:complexType>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:pattern value="\d{9}"/>
+           </xs:restriction>
+        </xs:simpleType>
+    <xs:simpleType name="relacion">
+       <xs:restriction base="xs:string">
+           <xs:enumeration value="Nai"/>  
+           <xs:enumeration value="Pai"/>  
+           <xs:enumeration value="Abuelo"/>  
+       </xs:restriction> 
+   </xs:simpleType>
+
+    <xs:complexType name="idade">
+         <xs:attribute name="anos" type="xs:unsignedByte"/>
+         <xs:attribute name="meses" type="xs:unsignedByte"/>
+   </xs:complexType>
+
+    <xs:simpleType name="anos">
+        <xs:restriction base="xs:unsignedByte">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="meses">
+        <xs:restriction base="xs:unsignedByte">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="11"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE mensaxe [
+<!ELEMENT mensaxe (de , para+ , asunto , corpo? , adxunto*)>
+<!ATTLIST mensaxe prioridade (baixa | normal | urxente) #IMPLIED>
+<!ATTLIST mensaxe gardarBandexa CDATA "enviados">
+<!ELEMENT de (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT asunto (#PCDATA)>
+<!ELEMENT corpo (#PCDATA)>
+<!ELEMENT adxunto (#PCDATA)>
+]>
+<!-- Introduzca un atributo para indicar a prioridade dos correos, que pode tomar os valores: baixa, normal ou urxente. 
+        Por defecto tomará o valor notrmal. O correo electrónico de exemplo debe ter o valor urxente para este atributo.
+        Un atributo gardarBandexa que tomará por defecto o valor "Enviados". -->
+<mensaxe prioridade="normal" gardarBandexa="">
+    <de>maria@gmail.com</de>
+    <para>ignacio@gmail.com</para>
+    <para>pedro@edu.xunta.es</para>
+    <asunto>Envíoche os arquivos</asunto>
+    <adxunto>D:\fotos\dePesca.jpg</adxunto>
+    <adxunto>D:\docs\carta.odt</adxunto>
+    <adxunto>D:\fotos\naCea.jpg</adxunto>
+</mensaxe>

@@ -1,0 +1,17 @@
+1G. 
+	al pedirnos org. directa tenemos que asignar una clave a cada valor 
+	como es directo y secuencial, la posicion 1 es la clave 1 
+
+	se reserva el 30% de 10 (3) + 10 empleados q ya habia 
+
+
+algoritmo de truncamiento:
+del primero (75645)
+
+se quitan los dos primeros (75) > 645 
+645 / 100 0.645 * 13 = 8.385 = 8
+
+
+
+
+

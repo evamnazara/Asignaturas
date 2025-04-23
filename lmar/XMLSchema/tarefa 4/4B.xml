@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<musica>
+    <cd titulo="Álbum A" ano="1998" interprete="musico1"/>
+    <cd titulo="Álbum B" ano="2005" interprete="musico2"/>
+    
+    <musico codigo="AA1122">
+        <nomeArtistico> Musico Uno</nomeArtistico>
+        <tipo>cantautor</tipo>
+        <instrumento>Guitarra</instrumento>
+    </musico>
+    
+    <musico codigo="BB233">
+        <nomeArtistico>Musico Dos</nomeArtistico>
+        <tipo>Solista</tipo>
+        <instrumento>Piano</instrumento>
+    </musico>
+</musica>

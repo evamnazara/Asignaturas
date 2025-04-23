@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="modulo">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element name="duracion" type="DuracionTipo" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="mome" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="ciclo" type="CicloTipo" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="contidos" type="ContidosTipo" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="codigo" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="tipoNomeLongo">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="150"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CodigoModulo">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="MP\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DuracionTipo">
+    <xs:attribute name="horas" type="xs:int"/>
+    <xs:attribute name="sesions" type="xs:int"/>
+    <xs:attribute name="sesionsSemanais" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="CicloTipo">
+    <xs:simpleContent>
+      <xs:extension base="tipoNomeLongo">
+        <xs:attribute name="codigo" type="CodigoCiclo"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="CodigoCiclo">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="C[S|M][A-Z]{3}\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ContidosTipo">
+    <xs:sequence>
+      <xs:element name="UD" type="UDTipo" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UDTipo">
+    <xs:sequence>
+      <xs:element name="titulo" type="tipoNomeLongo"/>
+      <xs:element name="descrición" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="num" type="xs:int"/>
+    <xs:attribute name="sesions" type="xs:int"/>
+  </xs:complexType>
+
+
+</xs:schema>

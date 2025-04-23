@@ -1,0 +1,64 @@
+===== REPASO COSAS IMPORTANTES ===================
+
+    &lt; // &gt; 
+
+===== CSS ========================================
+    > centrar siempre (margin: 0 auto;)
+    > display flex 
+    > justify-content: center 
+
+    . grupocampo {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        }
+    .grupo-campo label {
+        flex: 1;
+        margin-right: 
+        margin-left:
+    }
+    .grupo-campo input {
+        flex: 2;
+        margin-right: ;
+        margin-left: ;
+    }
+
+===== REGEX ======================================
+    > el tipo teléfono no valida 
+    > tipo email solo valida que haya una @ 
+    > también hay search, url
+
+    pattern="\+\d{2}\d{9}"
+    
+    CADENAS DE TEXTO: 
+    ^ inicio $ final
+
+    CARACTERES EN CONCRETO: 
+
+    NUMERICOS: 
+
+
+===== INPUTS =====================================
+
+    EJEMPLO FIELDSET CON VALORES:
+        <legend> cabecera </legend> 
+            <fieldset> </fieldset> 
+            <label for="numeroTarjeta"> NumeroTarjeta </label>
+                <input
+                    type="text"
+                    id="numeroTarjeta"
+                    name="numeroTarjeta"
+                    value="numeroTarjeta"
+                    required
+                >
+
+    EJEMPLO RANGO NUMERICO: 
+
+    
+
+==== MÉTODOS =====================================
+<form method="get/post" action="archivo.php"> 
+<input class="button" type="submit">
+
+mensaje personalizado: 
+    oninvalid="setCustomValidity('input incorrecto')"

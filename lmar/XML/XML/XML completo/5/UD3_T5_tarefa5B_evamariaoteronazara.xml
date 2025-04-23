@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reservas [
+    <!ELEMENT reservas (reserva)*> 
+    <!ELEMENT reserva (data*, informacion?) >
+    
+    <!ATTLIST ano CDATA #REQUIRED>
+    <!ATTLIST reserva
+          local ( polideportivo | local social) >
+      <!ATTLIST data
+           mes CDATA #REQUIRED
+           dia CDATA #REQUIRED
+           horario ( maña | tarde | noite) "tarde">
+    
+]>
+
+
+<reservas ano="2024">
+  <reserva local="polideportivo" bonidicacion="">
+      <data mes="2" dia="20" horario="tarde"></data>
+      <informacion></informacion>
+  </reserva>
+
+</reservas>
+
+
+<!-- reservas que se fan nun Centro Social dos locales que ten dispoñibles nun ano determinado:
+
+    raíz reservas: 
+              rexistrar as reservas que se fagan do polideportivo e/ou do local social. 
+              atributo obrigatorio ano
+    Reserva: atributo local que poderá tomar os valores Polideportivo ou Local social; 
+    e un atributo bonificación,-opcional-,  sobre o custo total da factura.
+    Cada reserva terá:
+unha data, que ten dous atributos obrigatorios mes e día, e un
+ atributo horario que pode tomar os valores mañá, tarde ou día (para indicar o día completo). Por defecto, tomará o valor de tarde.
+Información sobre o evento que se vai celebrar no caso de que se sepa.
+A continuación para manter información sobre o cliente que fai a reserva, aparecerá un elemento clienteEmpresa ou ben un elemento clientePersoal.
+   Os elementos evento, clienteEmpresa, clientePersoal son datos textuais.
+ -->

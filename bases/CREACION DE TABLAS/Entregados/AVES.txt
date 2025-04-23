@@ -1,0 +1,26 @@
+AVES(nomFamilia, distMin, distMax, nomGenero, velocMedia, tipoPlumaje, nomCientifico, tempMedia, numMaxHuevos, numEjemplar, fecha y hora, dni, nombre, apellidos, nombrezona, superficie, hábitat, clima)
+
+Cada ejemplar de ave capturada se identifica con un número correlativo único dentro de su especie, lo que permite hacer un seguimiento detallado de cada uno. Se recoge la fecha y hora de la captura, la persona que hizo la captura y la zona.  En una misma fecha y hora se pueden capturar varios ejemplares por la misma o diferentes personas.
+
+De cada persona se guarda DNI, nombre, apellidos. Una persona puede capturar varios ejemplares.
+
+De cada zona, su nombre que es único, superficie en km² y hábitat predominante (como bosques, praderas o zonas costeras), y el clima predominante de la zona (templado, mediterráneo o continental).
+
+Cada ave pertenece a una única especie, y cada especie a su vez pertenece a un único género, el cual se clasifica en una familia natural específica.
+
+De las familias se almacena información sobre su nombre (que es único) y las distancias mínimas y máximas que pueden volar. Para cada género se guarda su nombre (único), la velocidad media de vuelo y el tipo de plumaje. En cuanto a las especies, se registra su nombre científico (único), la temperatura media a la que pueden sobrevivir y el número máximo de huevos que pueden poner en una sola vez
+
+
+DEPENDENCIAS FUNCIONALES:
+AVES(nomFamilia, distMin, distMax, nomGenero, velocMedia, tipoPlumaje, nomCientifico, tempMedia, numMaxHuevos, numEjemplar, fecha y hora, dni, nombre, apellidos, nombrezona, superficie, hábitat, clima)
+
+numEjemplar: nomFamilia, distMin, distMax, nomGenero, velocMedia, tipoPlumaje, nomCientifico, tempMedia, numMaxHuevos, fecha y hora, dni, nombre, apellidos, nombrezona, superficie, hábitat, clima
+
+nomFamilia: distMin, distMax, nomGenero, velocMedia, tipoPlumaje, nomCientifico, tempMedia, numMaxHuevos, fecha y hora, dni, nombre, apellidos, nombrezona, superficie, hábitat, clima
+DNI: nombre, apellidos
+nombreZona: superficie, habitat, clima
+
+nomEjemplar + DNI: fecha y hora 
+
+EJEMPLAR // FAMILIA // ESPECIE // 
+

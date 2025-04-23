@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panaderias>
+    <panaderia>
+        <idPanadería>Panaderia Ejemplo</idPanadería>
+        <domicilio>Chan do Monte, 1, Marin</domicilio>
+        <telefono>986222333</telefono>
+        <telefono>666222333</telefono>
+        <pedido numPedido="P001" tipo="normal">
+            <fecha>22-03-2025</fecha>
+            <ingrediente>
+                <idIngrediente>chocolate</idIngrediente>
+                <ano>2025</ano>
+                <origen continente="Europa"/>
+            </ingrediente>
+            <ingrediente>
+                <idIngrediente>vainilla</idIngrediente>
+                <ano>2024</ano>
+                <origen continente="Europa"/>
+            </ingrediente>
+        </pedido>
+        <pedido numPedido="P002" tipo="urgente">
+            <fecha>22-03-2025</fecha>
+            <ingrediente>
+                <idIngrediente>levadura</idIngrediente>
+                <ano>2024</ano>
+            </ingrediente>
+        </pedido>
+    </panaderia>
+</panaderias>

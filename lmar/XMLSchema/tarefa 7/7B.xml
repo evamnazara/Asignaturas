@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instituto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="7B.xsd">
+   <alumno numExpedente="123" nome="Alicia María" apelido1="Casal" apelido2="Ferreiro">
+      <altura>156</altura>
+   </alumno>
+   <alumno numExpedente="155" nome="Paloma" apelido1="Pereiró">
+      <altura>Baixo</altura>
+   </alumno>
+   <profesor NRP="1234A590" nome="Carme" apelido1="Bouza" apelido2="Dominguez"/>
+   <profesor NRP="3332A590" nome="Mariña" apelido1="Cerviño" apelido2="Dominguez"/>
+   <alumno numExpedente="3442" nome="Fernando" apelido1="Puga" apelido2="Prado">
+      <altura>178</altura>
+   </alumno>
+</instituto>

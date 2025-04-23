@@ -1,0 +1,243 @@
+--VIDEOCLUB 
+
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'Videoclub')
+    BEGIN
+    	DROP DATABASE Videoclub;
+    END 
+GO
+    
+CREATE DATABASE Videoclub
+
+ON PRIMARY (
+	NAME = 'ArchivoPrincipal',
+    FILENAME = 'C:\Videoclub\ArchivoPrincipal.ndf',
+    SIZE = 5MB,
+    FILEGROWTH = 2MB
+),
+
+FILEGROUP Datos_Peliculas DEFAULT (
+	NAME = 'datosPeliculas1',
+	FILENAME = 'C:\Videoclub\datosPeliculas1.mdf',
+	SIZE = 20MB,
+	FILEGROWTH = 10%,
+	MAXSIZE = 60MB
+),
+(
+	NAME = 'datosPeliculas2',
+	FILENAME = 'C:\Videoclub\datosPeliculas2.mdf',
+	SIZE = 20MB,
+	FILEGROWTH = 10%,
+	MAXSIZE = 60MB
+)
+
+USE Videoclub
+
+CREATE TYPE Nacionalidad FROM VARCHAR(15) NOT NULL;
+CREATE TYPE Fecha FROM SMALLDATETIME NOT NULL; 
+
+-- PELICULA
+IF OBJECT_ID('PELICULA') IS NOT NULL
+    DROP TABLE Socios;
+GO
+CREATE TABLE PELICULA (
+    IdPelicula CHAR(7) PRIMARY KEY CHECK (IdPelicula LIKE '[PF][AEIOU]-[0-9][0-9][0-9][0-9]'),
+    Titulo VARCHAR(20),
+    AñoProduccion SMALLINT,
+    Genero VARCHAR(15),
+    Duracion SMALLINT,
+    Nacionalidad Nacionalidad,
+    CodCategoria TINYINT,
+
+    FOREIGN KEY (CodCategoria) REFERENCES CATEGORIA(CodCategoria) 
+			ON UPDATE CASCADE 
+			ON DELETE NO ACTION
+);
+
+
+--EJEMPLAR
+
+IF OBJECT_ID('EJEMPLAR') IS NOT NULL
+    DROP TABLE EJEMPLAR;
+GO
+
+CREATE TABLE EJEMPLAR (
+    IdPelicula CHAR(7),
+    IdEjemplar TINYINT,
+    Estado CHAR(1) DEFAULT 'B' 
+		CHECK (Estado IN ('B', 'R', 'M')),
+    FechaDeCompra Fecha DEFAULT (DATEADD(DAY, -2, GETDATE())),
+    PRIMARY KEY (IdPelicula, IdEjemplar),
+
+    FOREIGN KEY (IdPelicula) REFERENCES PELICULA(IdPelicula) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE
+);
+
+--  SOCIO
+
+IF OBJECT_ID('SOCIO') IS NOT NULL
+    DROP TABLE SOCIO;
+GO
+
+CREATE TABLE SOCIO (
+    Numero SMALLINT IDENTITY(1,1) PRIMARY KEY CLUSTERED,
+    DNI CHAR(9) UNIQUE 
+		CHECK (DNI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Za-z]'),
+    Nombre VARCHAR(20),
+    Apellidos VARCHAR(20),
+    Direccion VARCHAR(30),
+    Telefono CHAR(9) 
+		CHECK (Telefono LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	---?
+    FechaDeAlta Fecha NOT NULL DEFAULT GETDATE()
+) ON PRIMARY;
+
+-- ALQUILER 
+IF OBJECT_ID('ALQUILER') IS NOT NULL
+    DROP TABLE ALQUILER;
+GO
+
+CREATE TABLE ALQUILER (
+    IdEjemplar TINYINT,
+    IdPelicula CHAR(7),
+    FechaAlq Fecha DEFAULT GETDATE(),
+    NumeroSocio SMALLINT,
+    FechaEstimadaDev AS DATEADD(DAY, 15, FechaAlq),
+    FechaDev Fecha NULL CHECK (FechaDev >= FechaAlq),
+    PRIMARY KEY (IdEjemplar, IdPelicula, FechaAlq),
+    FOREIGN KEY (IdEjemplar, IdPelicula) REFERENCES EJEMPLAR(IdEjemplar, IdPelicula) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE,
+    FOREIGN KEY (NumeroSocio) REFERENCES SOCIO(Numero) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE
+);
+
+-- ACTOR 
+IF OBJECT_ID('ACTOR') IS NOT NULL
+    DROP TABLE ACTOR;
+GO
+
+CREATE TABLE ACTOR (
+    Nombre VARCHAR(25) PRIMARY KEY,
+    Nacionalidad Nacionalidad,
+    Sexo CHAR(1) DEFAULT 'M' 
+		CHECK (Sexo IN ('H', 'M'))
+);
+
+-- ACTUA 
+IF OBJECT_ID('ACTUA') IS NOT NULL
+    DROP TABLE ACTUA;
+GO
+CREATE TABLE ACTUA (
+    NombreActor VARCHAR(25),
+    IdPelicula CHAR(7),
+    PrincSec CHAR(1) DEFAULT 'P' CHECK (PrincSec IN ('P', 'S')),
+    PRIMARY KEY (NombreActor, IdPelicula),
+
+    FOREIGN KEY (NombreActor) REFERENCES ACTOR(Nombre) 
+			ON DELETE NO ACTION 
+			ON UPDATE NO ACTION,
+    FOREIGN KEY (IdPelicula) REFERENCES PELICULA(IdPelicula) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE
+) ON Datos_Peliculas;
+
+
+
+-- DIRECTOR 
+IF OBJECT_ID('DIRECTOR') IS NOT NULL
+    DROP TABLE DIRECTOR;
+GO
+
+CREATE TABLE DIRECTOR (
+    Nombre VARCHAR(25) PRIMARY KEY,
+    Nacionalidad Nacionalidad
+);
+
+-- DIRIGE 
+IF OBJECT_ID('DIRIGE') IS NOT NULL
+    DROP TABLE DIRIGE;
+GO
+
+CREATE TABLE DIRIGE (
+    IdPelicula CHAR(7),
+    NombreDirector VARCHAR(25),
+    PRIMARY KEY (IdPelicula, NombreDirector),
+
+    FOREIGN KEY (IdPelicula) REFERENCES PELICULA(IdPelicula) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE,
+    FOREIGN KEY (NombreDirector) REFERENCES DIRECTOR(Nombre) 
+			ON DELETE NO ACTION 
+			ON UPDATE NO ACTION --?
+);
+
+--FAMILIAR
+IF OBJECT_ID('FAMILIAR') IS NOT NULL
+    DROP TABLE FAMILIAR;
+GO
+
+CREATE TABLE FAMILIAR (
+    DNI CHAR(9) PRIMARY KEY 
+		CHECK (DNI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Za-z]'),
+    Nombre VARCHAR(60),
+    Parentesco VARCHAR(15),
+    FechaNacimiento Fecha,
+    NumeroSocio SMALLINT,
+
+    FOREIGN KEY (NumeroSocio) REFERENCES SOCIO(Numero) 
+			ON DELETE CASCADE 
+			ON UPDATE CASCADE
+) ON PRIMARY;
+
+
+-- CATEGORIA 
+IF OBJECT_ID('CATEGORIA') IS NOT NULL
+    DROP TABLE CATEGORIA;
+GO
+
+CREATE TABLE CATEGORIA (
+    CodCategoria TINYINT IDENTITY(1,5) PRIMARY KEY,
+    Precio MONEY 
+		CHECK (Precio >= 1 AND Precio <= 300),
+    Descripcion VARCHAR(30)
+);
+
+
+-- + modificaciones
+
+ALTER TABLE ALQUILER ADD PrecioAlquiler MONEY NOT NULL DEFAULT 4;
+ALTER TABLE ALQUILER DROP COLUMN PrecioAlquiler;
+
+-- 5a) DISTRIBUIDORA
+
+CREATE TABLE DISTRIBUIDORA (
+    IdDistribuidora TINYINT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(20) UNIQUE,
+    Direccion VARCHAR(50),
+    Fax CHAR(9) NULL CHECK (Fax LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+    Email VARCHAR(60) NULL
+);
+
+ALTER TABLE PELICULA ADD IdDistribuidora TINYINT FOREIGN KEY REFERENCES DISTRIBUIDORA(IdDistribuidora) ON UPDATE CASCADE ON DELETE NO ACTION;
+
+CREATE TABLE RECOMENDACION (
+    NumeroSocio SMALLINT,
+    SocioRecomendado SMALLINT,
+    PRIMARY KEY (NumeroSocio, SocioRecomendado),
+
+    FOREIGN KEY (NumeroSocio) REFERENCES SOCIO(Numero) 
+				ON DELETE SET NULL 
+				ON UPDATE CASCADE,
+    FOREIGN KEY (SocioRecomendado) REFERENCES SOCIO(Numero) 
+				ON DELETE SET NULL 
+				ON UPDATE CASCADE
+);
+
+--6
+ALTER TABLE PELICULA NOCHECK CONSTRAINT ALL;
+ALTER TABLE ALQUILER NOCHECK CONSTRAINT ALL;
+
+ALTER TABLE PELICULA CHECK CONSTRAINT ALL;
+ALTER TABLE ALQUILER CHECK CONSTRAINT ALL;

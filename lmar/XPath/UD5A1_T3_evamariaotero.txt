@@ -1,0 +1,29 @@
+a.) Os discos de tecnoloxía "SCSI".
+	/equipos/máquina/hardware/disco[@tecnoloxía="SCSI"]
+
+b.) O nome do sistema operativo da máquina con IP "192.168.10.45".
+	/equipos/máquina/config[IP/text()="192.168.10.45"]//ancestor::máquina/config/OS
+
+c.) Os atributos que figuran nos procesadores da marca "AMD".
+	/equipos/máquina/hardware/procesador[@marca="AMD"]
+
+d.) Os textos (soamente) que figuran na configuración (elemento "config") do equipo de nome "COPERNICO".
+	/equipos/máquina[@nome="COPERNICO"]/config//descendant-or-self::node()/text()
+
+e.) As máquinas de tipo "Semitorre" con sistema operativo "Windows XP".
+	//máquina[hardware/tipo="Semitorre"][config/OS="Windows XP"]
+
+f.) Os fabricantes das máquinas que teñan 4GB de memoria "DDR2".
+
+
+g.) O sistema operativo das máquinas nas que figure o número de núcleos do procesador.
+
+
+h.) Os nomes das máquinas que empreguen memoria con tecnoloxía "DDR2".
+
+
+i.) As máquinas con procesador da marca "Intel" e gravadora de DVD.
+
+
+j.)  A configuración daquelas máquinas nas que figura un gateway.
+

@@ -1,0 +1,66 @@
+<!-- No centro queren xerar un novo tipo de documento XML, "centro.xml", empregando a gramática dos xa existentes e engadindo os elementos novos que sexan necesarios, tendo en conta que:
+
+O novo documento deberá conter para cada ciclo a mesma información do documento "ciclos.xml".
+Ademais dentro de cada elemento "ciclo" figurarán os alumnos matriculados nese ciclo.
+Cada un deses alumnos terá como subelementos "nome", "apelidos", "datanacemento" e "nota", tal e como figura no documento "alumnos.xml".
+Cada alumno terá tamén un elemento "módulo" por cada módulo no que estea matriculado.
+Estes elementos "módulo" terán soamente dous atributos: un atributo "id" co código do módulo, e outro atributo "nota" coa nota obtida polo alumno no módulo.
+Empregar espazos de nomes para xerar un documento "centro.xml" coas indicacións anteriores, que conteña cando menos:
+
+Un ciclo con dous módulos.
+Nese ciclo haberá dous alumnos.
+Cada alumno estará matriculado nos dous módulos do ciclo. -->
+
+<!-- 
+<?xml version="1.1" encoding="utf-8"?>
+-->
+
+
+<centro xmlns:al="http://..../alumnos"
+		xmlns:cic="http://..../ciclos"> 
+	<al:alumnos>
+  
+		<al:alumno>
+			<al:nome>Alumno</al:nome>
+			<al:apelidos>de ejemplo</al:apelidos>
+			<al:ciclo id="DAW">DAM a distancia</al:ciclo>
+			<al:modulo id="MP0371" > 
+				<al:nota>Convalidada</al:nota>
+			</al:modulo>
+			<al:curso>2º</al:curso>
+			<al:datanacemento>06/11/2004</al:datanacemento>
+		</al:alumno>
+
+	</al:alumnos>
+	
+	<cic:ciclos>
+		<cic:ciclo id="ASIR" grao="CS"> 
+			<cic:módulo id="MP0370">
+				<cic:nome>Planificación e administración de redes</cic:nome>
+				<cic:horas>213</cic:horas>
+			</cic:módulo>
+			<cic:módulo id="MP0371">
+			  <cic:nome>Fundamentos hardware</cic:nome>
+			  <cic:horas>107</cic:horas>
+			</cic:módulo>
+			
+			<!-- PTERNECE A ALUMNOS. repiten datos: --> 
+			<al:alumnosMatriculados>
+				<al:alumno id="1">
+					<al:nome>Xoan</al:nome>
+					<al:apelidos>Cancedo da Foz</al:apelidos>
+					<al:curso>1º</al:curso>
+					<al:datanacemento>06/11/1991</al:datanacemento>
+					<al:modulo id="MP0370"> 
+						<al:nota> </al:nota>
+					</al:modulo>
+				</al:alumno>
+			</al:alumnosMatriculados>
+		</cic:ciclo>
+		
+		<cic:ciclo id="DAW" grao="CS">
+		</cic:ciclo>
+	</cic:ciclos>
+
+
+</centro>

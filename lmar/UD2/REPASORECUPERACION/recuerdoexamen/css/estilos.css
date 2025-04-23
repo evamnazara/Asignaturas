@@ -1,0 +1,187 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;b
+}
+
+div.header1 {
+  flex: 1;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 60px;
+  color: cadetblue;
+  text-shadow: 2px 2px 3px purple;
+  text-shadow: 5px 5px 3px plum;
+}
+
+h2 {
+  color: blueviolet;
+  font-variant: small-caps;
+  letter-spacing: 4px;
+}
+
+div.header2 img {
+  width: 200px;
+}
+
+nav {
+  background-color: darkolivegreen;
+  width: 100%;
+  padding: 2%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li:hover {
+  /* Aplica el hover al <li> entero */
+  background-color: rgb(168, 208, 194);
+}
+
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  display: block; /* Asegura que el <a> ocupe todo el espacio del <li> */
+}
+
+nav ul li:hover {
+  /* Cambia también el color del texto dentro del <li> */
+  color: rgb(24, 23, 23);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(101, 139, 101);
+  width: 100%;
+  align-items: center;
+  height: 120px;
+}
+div.envios p {
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+img.imgfooter {
+  width: 90px;
+}
+
+img.imgfooter:hover {
+  transform: scale(1.5);
+}
+/* index solo */
+
+main {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  border: 1px solid black;
+}
+
+section .indextexto {
+  flex: 1;
+  width: 500px;
+}
+
+h3 {
+  padding: 50px;
+  font-variant: small-caps;
+  font-size: 75px;
+}
+
+p {
+  padding: 2%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-variant: small-caps;
+  justify-content: center;
+}
+section .indexflor {
+  align-items: center;
+}
+
+img .indexflor {
+  width: 1000px;
+  justify-content: flex-end;
+}
+
+/* pagina 2 */
+main.pagina2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+}
+
+section.cosas {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section.floripondios {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+div.divflores {
+  justify-content: space-around;
+}
+div.divflores img {
+  width: 200px;
+  height: 200px;
+}
+
+p.tituflor {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  color: rgb(148, 58, 134);
+  font-size: 25px;
+  text-align: center;
+}
+
+p.parraflor {
+  color: darkblue;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+}
+
+div.divflores img:hover {
+  transform: scale(1.2) rotate(180deg);
+  transition: transform 2s ease-in-out;
+  border-radius: 60px;
+}
+
+th,
+td {
+  border: 1px solid pink;
+}
+
+table {
+  background-image: url("recuerdoexamen/img/tulipanes.jpg");
+  background-size: cover; /* Para cubrir toda la tabla */
+  background-position: center;
+}

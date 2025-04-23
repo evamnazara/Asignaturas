@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="5b.xsd">
+    <empregado>
+        <nome>Iria</nome>
+        <departamento>IFC</departamento>
+        <nss>123456789123</nss>
+        <contactos xsi:nil="false">989898989 987654321 978787878 978787878</contactos>
+    </empregado>
+    
+    <empregado>
+        <nome>Xoel</nome>
+        <departamento>CON</departamento>
+        <nss>234567891234</nss>
+        <contactos xsi:nil="true"></contactos>
+
+    </empregado>
+    
+    <departamento codigo="IFC">
+        <nome>Informática</nome>
+    </departamento>
+    
+    <departamento codigo="CON">
+        <nome>Contabilidade</nome>
+    </departamento>
+</empresa>
