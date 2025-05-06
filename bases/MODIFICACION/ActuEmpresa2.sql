@@ -35,6 +35,9 @@ WHERE NSS
 
 --4. La empresa va a realizar un ajuste, con lo cual decide eliminar el departamento de estadística, pasando a depender del departamento de Innovación los empleados que pertenecían a este departamento. Haz los cambios que consideres necesarios teniendo en cuenta que :
 --4.A el que era jefe del departamento de estadística pasa a depender del jefe de departamento de Innovación y tiene a su cargo al resto de empleados que cambiaron de departamento.
+UPDATE EMPREGADO
+	SET NumDepartamentoPertenece = (SELECT NumDepartamento FROM DEPARTAMENTO WHERE NomeDepartamento = 'INNOVACIÓN')
+	WHERE NumDepartamentoPertenece = (SELECT NumDepartamento FROM DEPARTAMENTO WHERE NomeDepartamento = 'ESTADÍSTICA');
 
 --cambio de director
 UPDATE EMPREGADO

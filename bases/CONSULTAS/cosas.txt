@@ -1,0 +1,23 @@
+repasar tema fechas
+
+coalesce(telefono1,telefono2), para cuando se quiere ensear siolo 1 valor de 2 q pueden ser nulos
+
+select distinct 
+
+top x / top x with ties 
+    top x no admite reptidos
+    top x with ties admite repetidos
+
+data_fin is null para cosas q no acabado ==  estado not in ('finalizado')
+
+
+EN EL CASE, ANTES DE DECLARARLO HAY UNA COMA ª!!!!
+    select cosa, 
+        case cosa
+            when x then y 
+        end as nombreCosa
+    from tabla
+
+
+si se piden todos los datos de una tabla, se pueden poner 
+    e.* --> todos los datos de la tabla 
