@@ -1,7 +1,5 @@
 --el authorization dbo es opcional pero weno 
 
-
-
 IF EXISTS (SELECT * FROM sys.databases WHERE name = 'CONFLICTOSBELICOS')
     BEGIN
     	DROP DATABASE CONFLICTOSBELICOS;
