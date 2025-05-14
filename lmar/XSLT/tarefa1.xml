@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Tarefa2A.xsl" ?>
+<venda>
+    <cliente cod="CL09384" />
+    <produtos>
+      <produto cod="LACT093" />
+      <produto cod="LACT012" />
+      <produto cod="ACEI015" />
+      <produto cod="AUGA005" />
+      <produto cod="CONS121" />
+    </produtos>
+</venda>
