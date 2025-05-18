@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><materias>
+    <dia num="1">
+        <materia hora="1" nome="Planificación e Administración de Redes"/>
+        <materia hora="2" nome="Planificación e Administración de Redes"/>
+        <materia hora="3" nome="Formación e Orientación Laboral"/>
+        <materia hora="4" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        <materia hora="5" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        <materia hora="6" nome="Implanación de Sistemas Operativos"/>
+        <materia hora="7" nome="Implanación de Sistemas Operativos"/>
+    </dia>
+    <dia num="2">
+        <materia hora="1" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        <materia hora="2" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        <materia hora="3" nome="Xestión de Bases de Datos"/>
+        <materia hora="4" nome="Xestión de Bases de Datos"/>
+        <materia hora="5" nome="Xestión de Bases de Datos"/>
+        <materia hora="6" nome="Implanación de Sistemas Operativos"/>
+        <materia hora="7" nome="Implanación de Sistemas Operativos"/>
+    </dia>
+    <dia num="3">
+        <materia hora="1"/>
+        <materia hora="2" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        <materia hora="3" nome="Formación e Orientación Laboral"/>
+        <materia hora="4" nome="Planificación e Administración de Redes"/>
+        <materia hora="5" nome="Planificación e Administración de Redes"/>
+        <materia hora="6" nome="Fundamentos Hardware"/>
+        <materia hora="7" nome="Fundamentos Hardware"/>
+        <materia hora="8" nome="Implanación de Sistemas Operativos"/>
+        <materia hora="9" nome="Implanación de Sistemas Operativos"/>
+    </dia>
+    <dia num="4">
+        <materia hora="1" nome="Planificación e Administración de Redes"/>
+        <materia hora="2" nome="Planificación e Administración de Redes"/>
+        <materia hora="3" nome="Implanación de Sistemas Operativos"/>
+        <materia hora="4" nome="Implanación de Sistemas Operativos"/>
+        <materia hora="5" nome="Formación e Orientación Laboral"/>
+        <materia hora="6" nome="Xestión de Bases de Datos"/>
+        <materia hora="7" nome="Xestión de Bases de Datos"/>
+    </dia>
+    <dia num="5">
+        <materia hora="1" nome="Planificación e Administración de Redes"/>
+        <materia hora="2" nome="Planificación e Administración de Redes"/>
+        <materia hora="3" nome="Xestión de Bases de Datos"/>
+        <materia hora="4" nome="Xestión de Bases de Datos"/>
+        <materia hora="5" nome="Fundamentos Hardware"/>
+        <materia hora="6" nome="Fundamentos Hardware"/>
+        <materia hora="7" nome="Formación e Orientación Laboral"/>
+    </dia>
+</materias>
