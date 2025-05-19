@@ -6,7 +6,7 @@
   <xsl:template match="/horario">
     <html>
       <head>
-        <title>Horario <xsl:value-of select="@ciclo"/></title>
+        <title>Horario de <xsl:value-of select="@ciclo"/></title>
       </head>
       <body>
         <h1>Horario <xsl:value-of select="@ciclo"/>, ano <xsl:value-of select="@ano"/></h1>
@@ -16,7 +16,6 @@
             <th>Inicio</th>
             <th>Fin</th>
           </tr>
-          <!-- Llamada al procesamiento de horas -->
           <xsl:apply-templates select="horas/hora"/>
         </table>
       </body>

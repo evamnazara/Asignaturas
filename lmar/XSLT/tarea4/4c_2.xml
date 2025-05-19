@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><materias>
+    <dia num="1">
+        <materia>
+            <materia hora="1" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="2" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="3" nome="Formación e Orientación Laboral"/>
+        </materia>
+        <materia>
+            <materia hora="4" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        </materia>
+        <materia>
+            <materia hora="5" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        </materia>
+        <materia>
+            <materia hora="6" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+        <materia>
+            <materia hora="7" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+    </dia>
+    <dia num="2">
+        <materia>
+            <materia hora="1" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        </materia>
+        <materia>
+            <materia hora="2" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        </materia>
+        <materia>
+            <materia hora="3" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="4" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="5" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="6" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+        <materia>
+            <materia hora="7" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+    </dia>
+    <dia num="3">
+        <materia>
+            <materia hora="1"/>
+        </materia>
+        <materia>
+            <materia hora="2" nome="Linguaxes de Marcas e Sistemas de Xestión da Información"/>
+        </materia>
+        <materia>
+            <materia hora="3" nome="Formación e Orientación Laboral"/>
+        </materia>
+        <materia>
+            <materia hora="4" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="5" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="6" nome="Fundamentos Hardware"/>
+        </materia>
+        <materia>
+            <materia hora="7" nome="Fundamentos Hardware"/>
+        </materia>
+        <materia>
+            <materia hora="8" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+        <materia>
+            <materia hora="9" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+    </dia>
+    <dia num="4">
+        <materia>
+            <materia hora="1" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="2" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="3" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+        <materia>
+            <materia hora="4" nome="Implanación de Sistemas Operativos"/>
+        </materia>
+        <materia>
+            <materia hora="5" nome="Formación e Orientación Laboral"/>
+        </materia>
+        <materia>
+            <materia hora="6" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="7" nome="Xestión de Bases de Datos"/>
+        </materia>
+    </dia>
+    <dia num="5">
+        <materia>
+            <materia hora="1" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="2" nome="Planificación e Administración de Redes"/>
+        </materia>
+        <materia>
+            <materia hora="3" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="4" nome="Xestión de Bases de Datos"/>
+        </materia>
+        <materia>
+            <materia hora="5" nome="Fundamentos Hardware"/>
+        </materia>
+        <materia>
+            <materia hora="6" nome="Fundamentos Hardware"/>
+        </materia>
+        <materia>
+            <materia hora="7" nome="Formación e Orientación Laboral"/>
+        </materia>
+    </dia>
+</materias>
