@@ -85,6 +85,8 @@ go
 --b)
 
 --Crea un procedimiento llamado pr_CrearEdicion, que se le pasa el nombre del curso, lugar, fecha, profesor y cree una nueva edición del curso. En un valor de retorno se informará del existo o no (-1 si no existe en curso, -2  no existe el profesor y 0 se ha creado correctamente). Si no se le pasa la fecha por defecto será dentro de un mes y si no se le pasa el lugar por defecto será Vigo
+use EMPRESANEW2
+go
 
 if OBJECT_ID('pr_CrearEdicion') is not null
 	drop procedure pr_CrearEdicion 
@@ -92,22 +94,56 @@ go
 
 create procedure pr_CrearEdicion 
 	@nombreCurso varchar (50),
-	@lugarcurso varchar (30),
+	@lugarcurso varchar (30) = 'Vigo',
 	@profesorCurso varchar(50) = null,
-	@nuevafecha date = null
+	@nuevafecha date = null --si es fecha nos e puede declarar calculado aqui 
 
 as
 begin 
+	set nocount on
 	declare 
 		@nombre varchar (50),
-		@lugar varchar (30) = 'Vigo', 
+		@lugar varchar (30),
 		@profesor varchar(50),
-		@fecha date = datediff(MONTH,1,getdate()) --en un mes
+		@fecha date = null
 	
-	select @nombre 
+	if not exists (select codigo from CURSO where Nome = @nombre)
+		return -1
+		
+	if not exists (select nss from EMPREGADO where nss = @profesor)
+		return -2
+		
+	if not exists (select nss from EMPREGADO where nss = @profesor)
+		return -2
+		
+	if @fecha is null --se declara aqui
+		select @fecha = dateadd(MONTH,1,getdate()) --en un mes
+			if @fecha in (select DATA from EDICION where Codigo =
+				(select Codigo from CURSO where Nome = @nombreCurso))
+			return -3
+	
+	declare @numEdicion int
+	
+	set @numEdicion = ISNULL((select MAX(numero) from EDICION where Codigo =
+				(select Codigo from CURSO where Nome = @nombreCurso)), 0) +1
+	
+	insert into EDICION(Codigo, Numero,Data,Profesor)
+	values(
+			(select codigo from CURSO where Nome = @nombreCurso),
+			@numEdicion, 
+			@fecha, 
+			@profesor
+			)
+		print '0'
+	return 0 
+	
+				
 end
 go
 
+exec pr_CrearEdicion 'Ciberseguridad','Vigo','12-04-2024','01010110'
+select * from EDICION
+go
 --Se quiere crear un procedimiento llamado pr_CrearModificarCurso, que permita dar de alta un curso o modificar uno existente junto a una nueva edicion. Hay que tener en cuenta:
 --Los parámetros que se le pasa son el nombre del curso, horas, lugar, fecha, profesor, nombreDepartamento.
 --Si existe el curso se actualizan el número de horas y sino se crea el curso siguiendo siguiendo la numeracion en el código.
@@ -142,3 +178,80 @@ go
 --------------------------------------------
 
 --total alumnos:   XXXXXX
+
+--edad-
+
+if object_id ('fnEdad','if') is not null 
+drop function fnEdad 
+go 
+create function fnEdad
+	(@fechanacimiento date) 
+	returns int
+as
+begin  
+	return datediff(dd,@fechanacimiento,getdate() ) / 365.25;
+end 
+go
+
+-- Haz una consulta que devuelva el nombre completo y edad de los empleados fijos utilizando esta función.
+select e.nome + ' ' + e.Apelido1 + ' ' + ISNULL(Apelido2,'') as NomeCompleto,
+	dbo.fnEdad(e.DataNacemento) as Idade
+	from EMPREGADO e 
+	inner join EMPREGADOFIXO ef on e.NSS = ef.NSS
+go
+
+
+--total alunos
+if OBJECT_ID('dbo.fnTotalAlumnosDepartamento') is not null 
+	drop function dbo.fnTotalAlumnosDepartamento
+go
+
+create function dbo.fnTotalAlumnosDepartamento
+	( 
+		@nombredepartamento varchar(30),
+		@nssprofesor varchar(15)
+	)
+	returns smallint
+	
+as
+begin
+	return (select COUNT(*) from EMPREGADO e 
+		inner join DEPARTAMENTO d on e.NumDepartamentoPertenece = d.NumDepartamento
+		where d.NomeDepartamento = @nombredepartamento
+			and @nssprofesor = nss)
+end 
+go 
+
+select * from EMPREGADO e
+	inner join DEPARTAMENTO d on e.NumDepartamentoPertenece = d.NumDepartamento
+	where NomeDepartamento = 'contabilidad'
+select dbo.fnTotalAlumnosDepartamento('contabilidad','9292929')
+go
+-- nombre del curso, horas, lugar, fecha, profesor, nombreDepartamento.
+create procedure dbo.pr_CrearModificarCurso 
+	( @nombreCurso, @horas, @lugar,@fecha,@profesor,@nombreDepartamento
+	)
+as
+begin 
+	set nocount on 
+	declare @retorno int 
+	
+	--cuerpo 
+	if not exists (select codigo from CURSO where Nome = @nombreCurso)
+		return -1
+		
+	if not exists (select nss from EMPREGADO where nss = @profesor)
+		return -2
+	
+	begin transaction 
+	begin try 
+		declare @cadena varchar(50)
+		
+		if @retorno = -1 
+		begin 
+			insert into CURSO values (@nombreCurso,@horas)
+			set @cadena = 'Horas: ' 
+			exec pr_CrearModficarCurso  
+			
+	
+end
