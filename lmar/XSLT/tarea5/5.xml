@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="5A.xsl"?>
+<grupo nombre="U2">
+   <integrante>
+      <nombre>Paul David</nombre>
+      <apellidos>Hewson</apellidos>
+      <funcion>Voz y guitarra rítmica</funcion>
+      <alias>Bono</alias>
+   </integrante>
+   <integrante>
+      <nombre>Adam</nombre>
+      <apellidos>Clayton</apellidos>
+      <funcion>Guitarra y sintetizador</funcion>
+   </integrante>
+   <integrante>
+      <nombre>David</nombre>
+      <apellidos>Howell Evans</apellidos>
+      <funcion>Guitarra y coro</funcion>
+      <alias>The edge</alias>
+   </integrante>
+   <integrante>
+      <nombre>Lawrence</nombre>
+      <apellidos>Mullen Junior</apellidos>
+      <funcion>Bateria</funcion>
+   </integrante>
+</grupo>
