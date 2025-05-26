@@ -1,0 +1,223 @@
+
+-- 1. Procedimiento sin parámetros
+create procedure prSinParametros
+as
+begin
+    print 'Este es un procedimiento sin parámetros.'
+end
+go
+
+-- Ejemplo de llamada:
+exec prSinParametros
+go
+
+-- 2. Procedimiento con parámetros y output
+create procedure prConParametros
+  @nombre nvarchar(50),
+  @saludo nvarchar(100) output
+as
+begin
+    set @saludo = 'Hola, ' + @nombre
+end
+go
+
+-- Ejemplo de llamada:
+declare @resultado nvarchar(100)
+exec prConParametros @nombre = 'Carlos', @saludo = @resultado output
+print @resultado
+go
+
+-- 3. Procedimiento que llama a otro procedimiento
+create procedure prInterno
+as
+begin
+    print 'Este es el procedimiento interno.'
+end
+go
+
+create procedure prExterno
+as
+begin
+    print 'Llamando al procedimiento interno:'
+    exec prInterno
+end
+go
+
+-- Ejemplo de llamada:
+exec prExterno
+go
+
+-- 4. Función escalar simple
+create function fnSaludo(@nombre nvarchar(50))
+returns nvarchar(100)
+as
+begin
+    return 'Hola, ' + @nombre
+end
+go
+
+-- Ejemplo de llamada:
+select dbo.fnSaludo('Ana') as Saludo
+go
+
+-- 5. Función que llama a otra función
+create function fnBase(@valor int)
+returns int
+as
+begin
+    return @valor * 2
+end
+go
+
+create function fnCompuesta(@numero int)
+returns int
+as
+begin
+    return dbo.fnBase(@numero) + 10
+end
+go
+
+-- Ejemplo de llamada:
+select dbo.fnCompuesta(5) as Resultado
+go
+
+-- 🔹 6. Cursor básico
+create procedure prCursorBasico
+as
+begin
+    declare @nombre nvarchar(50)
+    
+    declare cursorNombres cursor for
+    select nombre from Empleados
+
+    open cursorNombres
+    fetch next from cursorNombres into @nombre
+
+    while @@fetch_status = 0
+    begin
+        print 'Nombre: ' + @nombre
+        fetch next from cursorNombres into @nombre
+    end
+
+    close cursorNombres
+    deallocate cursorNombres
+end
+go
+
+-- Ejemplo de llamada:
+exec prCursorBasico
+go
+
+-- Cursores anidados
+create procedure prCursoresAnidados
+as
+begin
+    declare @departamentoId int
+    declare @empleadoNombre nvarchar(50)
+
+    declare cursorDepartamentos cursor for
+    select id from Departamentos
+
+    open cursorDepartamentos
+    fetch next from cursorDepartamentos into @departamentoId
+
+    while @@fetch_status = 0
+    begin
+        print 'Departamento ID: ' + cast(@departamentoId as nvarchar)
+
+        declare cursorEmpleados cursor for
+        select nombre from Empleados where departamento_id = @departamentoId
+
+        open cursorEmpleados
+        fetch next from cursorEmpleados into @empleadoNombre
+
+        while @@fetch_status = 0
+        begin
+            print '  Empleado: ' + @empleadoNombre
+            fetch next from cursorEmpleados into @empleadoNombre
+        end
+
+        close cursorEmpleados
+        deallocate cursorEmpleados
+
+        fetch next from cursorDepartamentos into @departamentoId
+    end
+
+    close cursorDepartamentos
+    deallocate cursorDepartamentos
+end
+go
+
+-- Ejemplo de llamada:
+exec prCursoresAnidados
+go
+
+
+create function fnCalcularEdad(@fechaNacimiento date)
+returns int
+as
+begin
+    declare @edad int
+    set @edad = datediff(year, @fechaNacimiento, getdate())
+
+    -- Ajuste si aún no ha cumplido años este año
+    if (month(@fechaNacimiento) > month(getdate()))
+        or (month(@fechaNacimiento) = month(getdate()) and day(@fechaNacimiento) > day(getdate()))
+        set @edad = @edad - 1
+
+    return @edad
+end
+go
+
+select dbo.fnCalcularEdad('1990-05-26') as Edad
+
+-- 
+-- 🔹 8. Función con manejo de errores (validación de fecha futura)
+create function fnCalcularEdadConError(@fechaNacimiento date)
+returns int
+as
+begin
+    if @fechaNacimiento > getdate()
+        return -1  -- Fecha de nacimiento inválida
+
+    declare @edad int
+    set @edad = datediff(year, @fechaNacimiento, getdate())
+
+    if (month(@fechaNacimiento) > month(getdate()))
+        or (month(@fechaNacimiento) = month(getdate()) and day(@fechaNacimiento) > day(getdate()))
+        set @edad = @edad - 1
+
+    return @edad
+end
+go
+
+-- Ejemplo de llamada:
+select dbo.fnCalcularEdadConError('2030-01-01') as Edad -- Retorna -1 por error
+go
+
+--9. Procedimiento con manejo de errores y código de retorno
+create procedure prInsertarEmpleado
+    @nombre nvarchar(50),
+    @edad int
+as
+begin
+    if @edad < 18
+    begin
+        raiserror('Edad no válida. Debe ser mayor de 18.', 16, 1)
+        return 1 -- Código de error
+    end
+
+    -- Supongamos que hay una tabla Empleados(nombre, edad)
+    insert into Empleados(nombre, edad) values (@nombre, @edad)
+    return 0 -- Código de éxito
+end
+go
+
+-- Ejemplo de llamada:
+declare @codigoRetorno int
+exec @codigoRetorno = prInsertarEmpleado @nombre = 'Luis', @edad = 16
+print 'Código de retorno: ' + cast(@codigoRetorno as nvarchar)
+go
+
+
+

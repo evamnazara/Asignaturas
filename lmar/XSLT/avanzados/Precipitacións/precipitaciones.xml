@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="UD5A3_tarefa4B_a_evaoteronazara.xsl" ?>
+
+<precipitaciones>
+   <registro>
+      <lugar>Santiago de Compostela</lugar>
+      <fecha>11/10/2010</fecha>
+      <litros-m2>23</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Vigo</lugar>
+      <fecha>11/10/2010</fecha>
+      <litros-m2>4</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Pontevedra</lugar>
+      <fecha>11/10/2010</fecha>
+      <litros-m2>8</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Ourense</lugar>
+      <fecha>11/10/2010</fecha>
+      <litros-m2>19</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Lugo</lugar>
+      <fecha>11/10/2010</fecha>
+      <litros-m2>5</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Pontevedra</lugar>
+      <fecha>14/10/2010</fecha>
+      <litros-m2>12</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Vigo</lugar>
+      <fecha>14/10/2010</fecha>
+      <litros-m2>12</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Lugo</lugar>
+      <fecha>14/10/2010</fecha>
+      <litros-m2>15</litros-m2>
+   </registro>
+   <registro>
+      <lugar>Ourense</lugar>
+      <fecha>16/10/2010</fecha>
+      <litros-m2>14</litros-m2>
+   </registro>
+</precipitaciones>
+
+
+
