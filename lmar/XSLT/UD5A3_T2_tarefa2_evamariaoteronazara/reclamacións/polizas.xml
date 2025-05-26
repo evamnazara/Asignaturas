@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="2B.xsl" ?>
+
+<polizas>
+    <poliza tipo="Contenido">
+        <cliente>Pepe Flores</cliente>
+        <reclamaciones>
+            <reclamacion>
+                <ano>2010</ano>
+                <detalles>Robo de TV y ordenador</detalles>
+            </reclamacion>
+        </reclamaciones>
+    </poliza>
+    <poliza tipo="Contenido">
+        <cliente>Lucia Varela</cliente>
+    </poliza>
+    <poliza tipo="Edificio">
+        <cliente>Santiago Crespo</cliente>
+        <reclamaciones>
+            <reclamacion>
+                <ano>2006</ano>
+                <detalles>Un incendio en la cocina</detalles>
+            </reclamacion>
+        </reclamaciones>
+    </poliza>
+    <poliza tipo="Contenido">
+        <cliente>Elvira Romero</cliente>
+        <reclamaciones>
+            <reclamacion>
+                <ano>1999</ano>
+                <detalles>Dinero y joyas robadas</detalles>
+            </reclamacion>
+            <reclamacion>
+                <ano>2009</ano>
+                <detalles>Cuadro de Murado</detalles>
+            </reclamacion>
+        </reclamaciones>
+    </poliza>
+    <poliza tipo="Edificio">
+        <cliente>Alba Ferreiro</cliente>
+    </poliza>
+</polizas>

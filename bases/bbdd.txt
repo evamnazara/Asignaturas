@@ -108,7 +108,7 @@ go
 exec prCursorBasico
 go
 
--- 🔹 7. Cursores anidados
+-- Cursores anidados
 create procedure prCursoresAnidados
 as
 begin
@@ -195,7 +195,7 @@ go
 select dbo.fnCalcularEdadConError('2030-01-01') as Edad -- Retorna -1 por error
 go
 
--- 🔹 9. Procedimiento con manejo de errores y código de retorno
+--9. Procedimiento con manejo de errores y código de retorno
 create procedure prInsertarEmpleado
     @nombre nvarchar(50),
     @edad int
