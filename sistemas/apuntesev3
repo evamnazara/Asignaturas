@@ -1,0 +1,77 @@
+GPO usuario: preferencias de usuario (conf de fondos)
+GPO equipo: config de SO y aplicaciones
+
+---
+
+Diferencia entre server e Windows: Experiencia de usuario // Inicio de sesión sólo como admin
+
+---
+
+Pasos engadir cliente: Tarjeta de red = Servidor, DNS e gateway servidor. Sistema > añadir a dominio > datos > confirmar con Administrador
+
+---
+
+Tipos de usuarios
+
+Locales:
+Moviles:
+Temporales:
+
+---
+
+Que é unha OU e para que se emprega? > Unidade Organizativa de Active Directory. Es un contenedor para organizar objetos.
+
+Como se pode eliminar unha OU que se creou con protección para eliminación accidental? > Hay que activar primeiro a vista de características avanzadas. Despois, nas opcións , desmarcar “Proteger contra eliminación accidetal.”
+
+Que é unha GPO? > Group Policy Object (Política de obxetos de grupo)
+
+Onde se anclas as GPO? > A Dominios, UO concretas,e a sitios.
+
+Atendendo a que afectan, que dous tipos de GPO podemos configurar? > De equipo e de usuario.
+
+Para que se emprega o comando GPUPDATE? > Actualiza as GPO.
+
+---
+
+TIPOS DE USUARIOS:
+• Local: Só está gardado nun equipo.
+• Móvil: Gardado nun servidor, pódese acceder desde outros equioos.
+• Obrigatorio: Versión de lectura dun perfil móvil.
+• Temporal: Non garda cambios, créanse por erro.
+
+---
+
+Administrar os usuarios e equipos do directorio Activo.
+Herramientas administrativas > Usuarios y equipos de active directory.
+
+Crear e configurar as GPO
+Herramientas > Administración de políticas de grupo
+o W + R gpmc.msc
+
+---
+
+REPASO DE REDES:
+
+Dados:
+
+> IP pública do router: 159.62.86.85
+> IP privada do router: 172.16.0.1 / 16
+> DNS1: 195.235.113.3
+> DNS2:195.235.96.90
+
+    PC1:
+        IP rede: 172.16.0.2
+        Mascara de rede: 255.255.0.0
+        Porta de enlace: 172.16.0.1
+        DNS1: 195.235.113.3
+        DNS2: 195.235.96.90
+
+        Dirección de rede: 172.16.0.0
+        Dirección de difusión: 172.16.255.255
+
+---
+
+IPs reservadas para redes privadas: Tipo A,B e C
+● A: 10.0.0.0 - 10.255.255.255
+● B: 172.16.0.0 - 172.31.255.255
+● C: 192.168.0.0 - 192.168.255.255
