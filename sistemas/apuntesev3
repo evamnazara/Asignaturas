@@ -11,14 +11,6 @@ Pasos engadir cliente: Tarjeta de red = Servidor, DNS e gateway servidor. Sistem
 
 ---
 
-Tipos de usuarios
-
-Locales:
-Moviles:
-Temporales:
-
----
-
 Que é unha OU e para que se emprega? > Unidade Organizativa de Active Directory. Es un contenedor para organizar objetos.
 
 Como se pode eliminar unha OU que se creou con protección para eliminación accidental? > Hay que activar primeiro a vista de características avanzadas. Despois, nas opcións , desmarcar “Proteger contra eliminación accidetal.”
