@@ -1,0 +1,14 @@
+apply templates mode? 
+
+<p> 
+    <foreach dentro>
+        sort order datatype select  
+                            select count() contar cosas q estan dentro 
+    </foreach> 
+</p>
+_________________
+
+if test (@cosa) 
+
+select position()
+variables 
