@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discos>
+    <disco tecnoloxía="SATA" capacidade="2000" máquina="PC017"/>
+    <disco tecnoloxía="SCSI" capacidade="200" máquina="GALILEO"/>
+    <disco tecnoloxía="SCSI" capacidade="200" máquina="GALILEO"/>
+    <disco tecnoloxía="SCSI" capacidade="200" máquina="GALILEO"/>
+</discos>
