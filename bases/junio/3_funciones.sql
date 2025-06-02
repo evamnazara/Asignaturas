@@ -216,7 +216,6 @@ begin
         print 'la persona tiene ' + cast(@numpisos as varchar) + ' piso(s).';
     else
         print 'estado desconocido.';
-
 end
 go 
 

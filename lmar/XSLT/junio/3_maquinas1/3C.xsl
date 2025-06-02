@@ -5,12 +5,12 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>taboa maquinas</title>
+                <title>Taboa maquinas</title>
             </head>
             <body>
                 <table border="1">
                     <tr>
-                        <th>Máquinas</th>
+                        <th>Maquinas</th>
                         <th>Procesador</th>
                         <th>Memoria</th>
                         <th>Disco(s)</th>
@@ -24,7 +24,7 @@
     <xsl:template match="máquina">
         <tr>
             <td>
-                <xsl:value-of select="@nome" />
+                <a href="config/IP"> <xsl:value-of select="@nome" /> </a>
             </td>
             <td>
                 <xsl:value-of select="hardware/procesador/@marca"/>
@@ -43,7 +43,7 @@
             <td>
                 <ul>
                     <li>
-                        <xsl:value-of select=""/>
+                        <xsl:value-of select="/@capacidade"/>
                     </li>
                 </ul>
             </td>
