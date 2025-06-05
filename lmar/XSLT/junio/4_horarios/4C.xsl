@@ -14,12 +14,4 @@
             </materias>
         </xsl:element>
     </xsl:template>
-
-    <xsl:template match="dia">
-        <xsl:element name="dia">
-      
-            <xsl:attribute name="num" />
-            <xsl:value-of select=""
-        </xsl:element>
-    </xsl:template>
 </xsl:stylesheet>

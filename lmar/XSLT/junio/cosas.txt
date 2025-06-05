@@ -1,0 +1,27 @@
+coger algo que no siempre tiene el mismo nombre 
+
+en xml el element se crearía con el nombre q le tocase ig 
+<xsl:when test="name() = 'lectora' or name() = 'gravadora'">
+    <xsl:element name="name()">
+        <xsl:value-of select="@tipo" />
+    </xsl:element>
+</xsl:when>
+
+html:
+
+<xsl:value-of select="name()" /> 
+ de
+<xsl:value-of select="@tipo" />
+
+=========================
+                        esto lleva (())
+ <xsl:if test="not(starts-with(hardware/tipo,'Impresora'))" >
+
+===============
+SORT DENTRO DE APPLY TEMPLATES
+<xsl:apply-templates select="equipos/máquina">
+        <!-- ordenados polo seu tipo, e dentro dos elementos 
+        dun mesmo tipo polo seu nome. -->
+    <xsl:sort select="tipo" order="ascending"/>
+    <xsl:sort select="@nome" order="ascending"/>
+</xsl:apply-templates>
