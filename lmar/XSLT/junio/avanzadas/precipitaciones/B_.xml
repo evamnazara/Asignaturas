@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><precipitaciones>
+    <registro>
+        <lugar>Santiago de Compostela</lugar>
+        <fecha>11/10/2010</fecha>
+        <litros-m2>23</litros-m2>
+    </registro>
+    <registro>
+        <lugar>Ourense</lugar>
+        <fecha>11/10/2010</fecha>
+        <litros-m2>19</litros-m2>
+    </registro>
+</precipitaciones>

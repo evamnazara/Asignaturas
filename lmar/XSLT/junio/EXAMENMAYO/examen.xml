@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="xsl/text" href="ej1.xsl"?>
+<alojamientos>
+   <hoteles>
+      <hotel id="paris" estrellas="2">
+             <nombre>Gran Hotel Paris</nombre>
+             <localidad>Porto</localidad>
+             <web>http://www.hotelparis.pt</web>
+             <observaciones>Es el hotel más antiguo de la ciudad. Conserva el ambiente del siglo XIX.</observaciones>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+             </servicios>
+      </hotel>
+       <hotel id="granrey" estrellas="3">
+             <nombre>Hotel Gran Rey</nombre>
+             <localidad isla="La Gomera">Valle Gran Rey</localidad>
+             <web>http://www.hotelgranrey.es</web>
+             <observaciones>En primera línea de playa</observaciones>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+             </servicios>
+             <restaurantes>
+                <restaurante>buffet</restaurante>
+             </restaurantes>
+             <instalaciones>
+                <piscina tipo="adultos"/>
+                <piscina tipo="niños"/>
+                <pistaTenis/>
+             </instalaciones>
+      </hotel>
+      <hotel id="playaBlanca" estrellas="4">
+             <nombre>Hotel Playa Blanca</nombre>
+             <localidad isla="Lanzarote">Playa Blanca</localidad>
+             <web>http://www.playablanca.lanzarote.es</web>
+             <observaciones>En primera línea de playa.</observaciones>
+             <servicios>
+                <gimnasio/>
+                <animacion/>
+                <wifi/>
+                <desayuno/>
+             </servicios>
+             <instalaciones>
+                 <piscina tipo="infinita"/>
+                 <piscina tipo="adultos"/>
+                 <piscina tipo="niños">con toboganes</piscina>                 
+             </instalaciones>
+             <restaurantes>
+                <restaurante>buffet</restaurante>
+                <restaurante>Canario</restaurante>
+                <restaurante>Mexicano</restaurante>
+             </restaurantes>
+      </hotel>
+       <hotel id="fruela" estrellas="3">
+             <nombre>Fruela</nombre>
+             <localidad>Oviedo</localidad>
+             <web>http://www.hotelfruela.com</web>
+             <servicios>
+                <wifi/>
+             </servicios>
+      </hotel>
+      <hotel id="postadesol" estrellas="2">
+             <nombre>Posta de Sol</nombre>
+             <localidad>Finisterre</localidad>
+             <web>http://www.postadesol.es</web>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+             </servicios>
+             <restaurantes>
+                <restaurante>buffet</restaurante>
+             </restaurantes>
+      </hotel>
+         <hotel id="solgavilanes" estrellas="4">
+             <nombre>Sol Gavilanes</nombre>
+             <localidad isla="Menorca">Cala Galdana</localidad>
+             <web>http://es.melia.com/sol-gavilanes</web>
+             <observaciones>Acceso directo a la playa</observaciones>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+                <spa/>
+                <gimnasio/>
+                <animacion/>
+                <club4>hasta 4 años</club4>
+                <miniclub>de 5 a 12 años</miniclub>
+             </servicios>
+             <restaurantes>
+                <restaurante>buffet</restaurante>
+                <restaurante>Italiano</restaurante>
+                <restaurante>Mexicano</restaurante>
+                <restaurante>cocina Balear</restaurante>
+                <restaurante>cocina Mediterránea</restaurante>
+             </restaurantes>
+             <instalaciones>
+                <piscina tipo="adultos"/>
+                <piscina tipo="niños"/>
+                <pistaTenis/>
+                <parqueInfantil/>
+             </instalaciones>
+      </hotel>
+       <hotel id="beatrizplaya" estrellas="4">
+             <nombre>Beatriz Playa &amp; Spa</nombre>
+             <localidad isla="Lanzarote">Puerto del Carmen</localidad>
+             <web>http://www.beatrizhoteles.com/es/​beatriz-playa-spa.html</web>
+             <observaciones>En primera línea de playa</observaciones>
+             <observaciones>Amplias zonas ajardinadas</observaciones>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+             </servicios>
+             <restaurantes>
+                <restaurante>buffet</restaurante>
+                <restaurante>Canario</restaurante>
+             </restaurantes>
+             <instalaciones>
+                <piscina tipo="adultos"/>
+                <piscina tipo="niños"/>
+                <piscina tipo="climatizada"/>
+             </instalaciones>
+      </hotel>
+       <hotel id="granhotel">
+             <nombre>Gran Hotel</nombre>
+             <localidad>Madrid</localidad>
+             <servicios>
+                <wifi/>
+                <desayuno/>
+                <gimnasio/>
+            </servicios>
+      </hotel>
+  </hoteles>
+   <casasRurales>
+      <casa id="covadabalea">
+            <nombre>Cova da balea</nombre>
+            <localidad>Aldán</localidad>
+            <web>http://www.covadabalea.com</web>
+      </casa>
+      <casa id="cortevella">
+            <nombre>A Cortevella</nombre>
+            <localidad>Baleira-Lugo</localidad>
+            <web>http://www.cortevella.a-marronda.com</web>
+      </casa>
+   </casasRurales>
+</alojamientos>
+
+
+

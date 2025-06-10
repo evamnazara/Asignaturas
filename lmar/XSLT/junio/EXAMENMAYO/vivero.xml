@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="xsl/text" href="ej2.xsl"?>
+
+
+<vivero>
+    <proveedores>
+        <proveedor id="PB01" nombre="Bosque Camino de la Bruja" provincia="León" />
+        <proveedor id="PB11" nombre="O Cotillón" provincia="Lugo" />
+        <proveedor id="PV51" nombre="Invernadero Xoaniña" provincia="Pontevedra" /> 
+        <proveedor id="PPJ9" nombre="Jardín Vertical" provincia="Pontevedra" /> 
+    </proveedores>
+    <seccion nombre="arboles">
+        <Familia id="QUE" nombre="Robles" proveedor="PB01">
+            <arbol ref="RobleCastella-01">
+                <Descripcion>Roble castellano de porte majestuoso y longevidad notable.</Descripcion>
+                <Habitat>Bosque mediterráneo</Habitat>
+                <Altura  unidad="metros">25</Altura>
+                <Copa>15 m</Copa>
+                <Hojas>Hojas lobuladas y caducas</Hojas>
+                <Flores>Flores discretas en primavera</Flores>
+                <Raices>Raíces profundas y extendidas</Raices>
+                <Frutos>Bellotas de buena producción</Frutos>
+
+                <Clima>Templado</Clima>
+                <Suelo>Fértil y ligeramente calcáreo</Suelo>
+                <Conservacion>Común</Conservacion>
+            </arbol>
+            <arbol ref="RobleMadrilen-02">
+                <Descripcion>Roble madrileño, reconocido por su crecimiento vigoroso y resistencia.</Descripcion>
+                <Habitat>Bosque ribereño</Habitat>
+                <Altura unidad="metros">20</Altura>
+                <Hojas>Hojas redondeadas y caducas</Hojas>
+                <Flores>Flores pequeñas en verano</Flores>
+                <Raices>Raíces extendidas superficiales</Raices>
+                <Frutos>Bellotas medianas</Frutos>
+                <Clima>Templado</Clima>
+                <Suelo>Fértil con buen drenaje</Suelo>
+            </arbol>
+        </Familia>
+        <Familia id="PIN" nombre="Coníferas" proveedor="PB11">
+            <arbol ref="PinoSilvestre-03">
+                <Descripcion>Pino silvestre de follaje perenne y aroma resinoso.</Descripcion>
+                <Habitat>Bosque montañoso</Habitat>
+                <Altura  unidad="metros">30</Altura>
+                <Hojas>Agujas densas</Hojas>
+                <Flores>No posee flores vistosas</Flores>
+                <Raices>Raíces pioneras extensas</Raices>
+                <Frutos>Piñas con semillas dispersas</Frutos>
+                <Clima>Frío</Clima>
+                <Suelo>Árido y rocoso</Suelo>
+            </arbol>
+        </Familia>
+    </seccion>
+
+    <seccion nombre="plantas">
+        <Familia id="ORQ" nombre="Orquídeas" proveedor="PV51">
+            <planta ref="OrquideaVioleta-101">
+                <Descripcion>Orquídea Violeta de belleza exótica y pétalos delicados.</Descripcion>
+                <Altura  unidad="metros">0.4</Altura>
+                <Follaje>Hojas pequeñas y brillantes</Follaje>
+                <Crecimiento>Crecimiento lento</Crecimiento>
+                <Floracion>Floración en verano</Floracion>
+                <Cuidados>Luz indirecta y riego esporádico</Cuidados>
+        
+                <Clima>Cálido</Clima>
+                <Suelo>Bien drenado y orgánico</Suelo>
+            </planta>
+            <planta ref="OrquideaBlanca-102">
+                <Descripcion>Orquídea Blanca, delicada y de elegante fragancia.</Descripcion>
+                <Altura  unidad="metros">0.5</Altura>
+                <Follaje>Hojas sutiles de tono verde</Follaje>
+                <Crecimiento>Crecimiento controlado</Crecimiento>
+                <Floracion>Floración prolongada en primavera</Floracion>
+                <Cuidados>Riego moderado y luz indirecta</Cuidados>
+        
+                <Clima>Cálido</Clima>
+                <Suelo>Bien drenado, mixto</Suelo>
+            </planta>
+        </Familia>
+        <Familia id="FERN" nombre="Helechos" proveedor="PPJ9">
+            <planta ref="HelechoVerde-201">
+                <Descripcion>Helecho Verde, con fronda exuberante y textura delicada.</Descripcion>
+                <Altura  unidad="metros">0.6</Altura>
+                <Follaje>Frondoso y de textura suave</Follaje>
+                <Crecimiento>Crecimiento rápido en sombra</Crecimiento>
+                <Floracion>No presenta floración</Floracion>
+                <Cuidados>Requiere alta humedad y sombra constante</Cuidados>     
+                <Clima>Húmedo</Clima>
+                <Suelo>Húmedo y fértil</Suelo>
+            </planta>
+        </Familia>
+    </seccion>
+</vivero>
+
+

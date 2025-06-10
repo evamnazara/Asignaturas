@@ -25,3 +25,10 @@ SORT DENTRO DE APPLY TEMPLATES
     <xsl:sort select="tipo" order="ascending"/>
     <xsl:sort select="@nome" order="ascending"/>
 </xsl:apply-templates>
+
+==============
+    <xsl:variable name="lugar" select="'Vigo'" />
+    llamar: 
+        <xsl:value-of select="$lugar"/>
+    filtrar 
+        <xsl:apply-templates select="registro/[lugar = $lugar]" />
