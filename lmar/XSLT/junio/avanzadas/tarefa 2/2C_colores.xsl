@@ -53,8 +53,6 @@
                 <td>
                     <xsl:value-of select="hardware/disco/@capacidade"/>
                 </td>
-                
-                
             </tr>
         </xsl:if>
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="2A.xsl"?>
+<?xml-stylesheet type="text/xsl" href="2A_otravez.xsl"?>
 <equipos>
     <máquina nome="PC017">
         <hardware>

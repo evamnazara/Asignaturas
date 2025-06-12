@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><vivero>
     <Árboles>
-        <árbol num=""/>
+        Roble castellano de porte majestuoso y longevidad notable.
+        Bosque mediterráneo
+        25
+        15 m
+        Hojas lobuladas y caducas
+        Flores discretas en primavera
+        Raíces profundas y extendidas
+        Bellotas de buena producción
+
+        Templado
+        Fértil y ligeramente calcáreo
+        Común
+            
+        Roble madrileño, reconocido por su crecimiento vigoroso y resistencia.
+        Bosque ribereño
+        20
+        Hojas redondeadas y caducas
+        Flores pequeñas en verano
+        Raíces extendidas superficiales
+        Bellotas medianas
+        Templado
+        Fértil con buen drenaje
+            
+        Pino silvestre de follaje perenne y aroma resinoso.
+        Bosque montañoso
+        30
+        Agujas densas
+        No posee flores vistosas
+        Raíces pioneras extensas
+        Piñas con semillas dispersas
+        Frío
+        Árido y rocoso
     </Árboles>
+    <Plantas>
+        <Planta num="1" Familia="Orquídeas">
+            <Ref>OrquideaVioleta-101</Ref>
+            <Descripcion>Orquídea Violeta de belleza exótica y pétalos delicados.</Descripcion>
+        </Planta>
+        <Planta num="2" Familia="Helechos">
+            <Ref>HelechoVerde-201</Ref>
+            <Descripcion>Helecho Verde, con fronda exuberante y textura delicada.</Descripcion>
+        </Planta>
+    </Plantas>
 </vivero>

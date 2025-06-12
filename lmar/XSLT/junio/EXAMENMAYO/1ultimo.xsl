@@ -10,94 +10,91 @@
                 <title>Alojamientos</title>
             </head>
             <body>
-                <h1>Hoteles</h1>
+                <h1>
+                    <xsl:attribute name="style">
+                        color:red;
+                    </xsl:attribute>
+                    Hoteles</h1>
                 
                 <xsl:apply-templates select="alojamientos/hoteles/hotel" mode="lista">
                     <xsl:sort select="@estrellas" order="descending" />
                     <xsl:sort select="nombre" order="descending" />
+                    <xsl:sort select="count(servicios)" order="descending" />
+
                 </xsl:apply-templates>
-                
                 <hr/>
-            
+                
                 <xsl:apply-templates select="alojamientos/hoteles/hotel" mode="detalle">
                     <xsl:sort select="@estrellas" order="descending" />
                     <xsl:sort select="nombre" order="descending" />
-                </xsl:apply-templates>
-                
+                    <xsl:sort select="count(servicios)" order="descending" />
+                </xsl:apply-templates> 
             </body>
         </html>
     </xsl:template>
- 
-    <xsl:template match="hotel" mode="lista" >
-        
+    
+    <xsl:template match="hotel" mode="lista">
         <a>
             <xsl:attribute name="href">#<xsl:value-of select="@id" />
             </xsl:attribute>
-            <xsl:value-of select="nombre"/> 
-            (
-            <xsl:value-of select="@estrellas" />
-            estrellas )
+            <xsl:value-of select="nombre" />
+            
+            <xsl:if test="@estrellas">
+                <xsl:text> (</xsl:text>
+                <xsl:value-of select="@estrellas" />
+                <xsl:text> estrellas)</xsl:text>
+            </xsl:if>
         </a>
         <br/>
-        
     </xsl:template>
     
     
     <xsl:template match="hotel" mode="detalle">
-        <h2> 
-            <xsl:attribute name="id" >
+        <h2>
+            <xsl:attribute name="id">
                 <xsl:value-of select="@id" />
             </xsl:attribute>
+            
+            
             <xsl:value-of select="nombre" />
-            (
-            <xsl:value-of select="localidad"/>
-            ) - ( 
-            <xsl:value-of select="@estrellas" />
-            estrellas)
         </h2>
         
-        <xsl:value-of select="observaciones"/>
+        <xsl:value-of select="observaciones" />
         
-        <ul> 
+        <ul>
             <xsl:if test="instalaciones/piscina">
-                <li>
-                    Piscina (
+                <li> Piscina: ( 
                     <xsl:value-of select="count(instalaciones/piscina)" />
-                    )
-                </li>
+                    )</li>
             </xsl:if>
-            <xsl:if test="restaurantes">
-                <li>
-                    <xsl:text> Restaurantes ( </xsl:text>
+            <xsl:if test="restaurantes/restaurante">
+                <li> Restaurantes: ( 
                     <xsl:value-of select="count(restaurantes/restaurante)" />
-                    <xsl:text> ) </xsl:text>
-                </li>
+                    )</li>
             </xsl:if>
             <xsl:if test="servicios">
-                <li>
-                    Servicios     
+                <li> Servicios: 
                     <ul>
-                        <xsl:apply-templates select="servicios" />
+                        <xsl:apply-templates select="servicios">
+                            
+                        </xsl:apply-templates>
                     </ul>
                 </li>
-                
-                
             </xsl:if>
-            
         </ul>
-  
-        <hr/>
-    </xsl:template>
-
+    </xsl:template> 
+    
     <xsl:template match="servicios">
+ 
         <xsl:for-each select="*">
-            <xsl:sort select="name()" order="ascending"/>
-
+            <xsl:sort select="name()" order="ascending" />
+                
             <li>
                 <xsl:value-of select="name()"/>
             </li>
-            
         </xsl:for-each>
+        
     </xsl:template>
+    
 
 </xsl:stylesheet>
